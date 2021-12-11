@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+  <HEAD>
+    <TITLE>The document title</TITLE>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </HEAD>
+  <BODY>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <span id='logo'>TuTangle</span>
+            </div>
+
+            <div class="serchbar-container">
+                <div id="searchbar">
+                    <input type="text" placeholder="Search by Team, Member, or Entry Title">
+                    <span class='icon-clear'><i class="fas fa-times"></i></span>
+                    <span class='icon-search'><i class="fas fa-search"></i></span>
+                </div>
+                <button id='btn-search'>Search</button>
+            </div>
+
+            <div class="navbar-user-section">
+                <h2 id="username">Joe Buros</h2>
+                <div id="user-links">
+                    <a href="#">Home</a>|
+                    <a href="#">Settings</a>|
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="menubar-container">
+            <div id="menubar">
+                <a href="#">Create New Entries</a>
+                <a href="#">My Topic Boxes</a>
+                <a href="#">Friends</a>
+                <a href="#">Invite New Member</a>
+            </div>
+
+            <div id="notification-bar">
+                <div id="invites-bar">
+                    <span class="notification-icon-container">
+                        <i class="fas fa-box"></i>
+                    </span>
+
+                    <span>
+                        Topic Boxes Invites -
+                    </span>
+
+                    <span id="invites-count">
+                        2
+                    </span>
+                </div>
+
+                <div id="requests-bar">
+                    <span class="notification-icon-container">
+                        <i class="fas fa-user"></i>
+                    </span>
+
+                    <span>
+                        Friend Requests -
+                    </span>
+
+                    <span id="invites-count">
+                        0
+                    </span>
+                </div> 
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="body-container">
+        <div class="body-container-left">
+            <div class="recent-searches-container">
+                <ul class="quick-links-ul">
+                    <li class="recent-search">
+                        <span class="search-title">Nick and the Bad Seeds</span>
+                        <a href="" class="mini-icon-container">
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </li>
+                    <li class="recent-search">
+                        <span class="search-title">African Animals</span>
+                        <a href="" class="mini-icon-container">
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="recent-searches-by-category-container">
+                <ul class="quick-links-ul">
+                    <li class="recent-search">
+                        <span class="search-title">Different Versions of the Tristan Und Isolde Prelude</span>
+                        <button class="mini-icon-container">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                    <li class="recent-search">
+                        <span class="search-title">Music</span>
+                        <button class="mini-icon-container">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                    <li class="recent-search">
+                        <span class="search-title">Guitar</span>
+                        <button class="mini-icon-container">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                    <li class="recent-search">
+                        <span class="search-title">Bob Cohen</span>
+                        <button class="mini-icon-container">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                    <li class="recent-search">
+                        <span class="search-title">Mark Schanck</span>
+                        <button class="mini-icon-container">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                    <li class="recent-search">
+                        <span class="search-title">Jefferson Dickey</span>
+                        <button class="mini-icon-container">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="body-container-center">
+
+            <div class="category-tabs-container">   
+                <h1 class="body-title">Entries</h1>
+
+                <div class="category-tabs-container-left">
+                    <p class="category-type">
+                        All Entries
+                    </p> 
+                    <button>
+                        All Members
+                    </button>
+                    <button>
+                        Friends
+                    </button>
+                </div>
+
+                <div class="category-tabs-container-right">
+                    <p class="category-type">
+                        Subscribed
+                    </p> 
+                    <button>
+                        New Entries
+                    </button>
+                    <button>
+                        New Comments
+                    </button>
+                </div>
+            </div> 
+
+            <div class="post-container">
+                <img src="" alt="face" class="user-image-box">
+                <div class="post-info-section"> 
+                    <h2 class="post-title">
+                        Day For Night by Francois Truffaut, a Ground Breaking film
+                    </h2>
+                    <div class="post-sub-info-section">
+                        <span class="by">
+                            by <a href="#">Alan Coe</a>
+                        </span> |
+                        <span class="on">
+                            Feb 10, 2012
+                        </span> |
+                        <span class="Subbed">
+                            Subscribed
+                        </span> 
+                        <div class="topic-category-info">
+                            From Topic Box: <a href="#">My Favorite Movies</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="post-container">
+                <img src="" alt="face" class="user-image-box">
+                <div class="post-info-section">
+                    <span class="dynamic-feature">
+                        New Entry!
+                    </span>
+                    <h2 class="post-title">
+                        Blade Runner, The Director's Cut
+                    </h2>
+                    <div class="post-sub-info-section">
+                        <span class="by">
+                            by <a href="#">Mary Pilot</a>
+                        </span> |
+                        <span class="on">
+                            Feb 8, 2012
+                        </span> 
+                        <!-- <span class="Subbed">
+                            
+                        </span>  -->
+                        <div class="topic-category-info">
+                            From Topic Box: <a href="#">Behind the Scene</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="post-container">
+                <img src="" alt="face" class="user-image-box">
+                <div class="post-info-section">
+                    <span class="dynamic-feature">
+                        New Comment!
+                    </span>
+                    <h2 class="post-title">
+                        The Best French Restaurant in Chicago
+                    </h2>
+                    <div class="post-sub-info-section">
+                        <span class="by">
+                            by <a href="#">Jim Roy</a>
+                        </span> |
+                        <span class="on">
+                            Feb 7, 2012
+                        </span> 
+                        <!-- <span class="Subbed">
+                            Subscribed
+                        </span>  -->
+                        <div class="topic-category-info">
+                            From Topic Box: <a href="#">Chicago Restaurants Reviews</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="post-container">
+                <img src="" alt="face" class="user-image-box">
+                <div class="post-info-section">
+                    <!-- <span class="dynamic-feature">
+                        New Entry
+                    </span> -->
+                    <h2 class="post-title">
+                         The Meaning of Night. Dark BOok but Incredibly Well Written.
+                    </h2>
+                    <div class="post-sub-info-section">
+                        <span class="by">
+                            by <a href="#">John-Peter Moise</a>
+                        </span> |
+                        <span class="on">
+                            Feb 7, 2012
+                        </span> |
+                        <span class="Subbed">
+                            Subscribed
+                        </span> 
+                        <div class="topic-category-info">
+                            From Topic Box: <a href="#">Books Read & Books to Read</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="post-container">
+                <img src="" alt="face" class="user-image-box">
+                <div class="post-info-section">
+                    <span class="dynamic-feature">
+                        Topic Box Invite!
+                    </span>
+                    <h2 class="post-title">
+                         Pea Pesto
+                    </h2>
+                    <div class="post-sub-info-section">
+                        <span class="by">
+                            by <a href="#">Marianne Gig</a>
+                        </span> |
+                        <span class="on">
+                            Feb 6, 2012
+                        </span> 
+                        <!-- <span class="Subbed">
+                            Subscribed
+                        </span>  -->
+                        <div class="topic-category-info">
+                            From Topic Box: <a href="#">Favorite Recipes</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+ 
+        <div class="body-container-right">
+            <ul class="quick-links-ul">
+                <li class="li-link">
+                    <a href="#">Overview of TuTangle</a>
+                </li>
+                <li class="li-link">
+                    <a href="#">Searching the Site</a>
+                </li>
+                <li class="li-link">
+                    <a href="#">Previous & Saved Searches</a>
+                </li>
+                <li class="li-link">
+                    <a href="#">The Topic Box Page</a>
+                </li>
+                <li class="li-link">
+                    <a href="#">Creating a Topic Box</a>
+                </li>
+                <li class="li-link">
+                    <a href="#"> View Topic Box Entries </a>
+                </li>
+                <li class="li-link">
+                    <a href="#"> Creating an Entry </a>
+                </li>
+                <li class="li-link">
+                    <a href="#"> Privacy Settings </a>
+                </li>
+                <li class="li-link">
+                    <a href="#"> Co-Authoring </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <ul class="footer-links">
+            <li class="footer-link">
+                <a href="#"> About </a>
+            </li>
+            <li class="footer-link">
+                <a href="#"> Contact Us </a>
+            </li>
+            <li class="footer-link">
+                <a href="#"> Terms of Use </a>
+            </li>
+            <li class="footer-link">
+                <a href="#"> Privacy Policy </a>
+            </li>
+            <li class="footer-link">
+                <a href="#"> Feedback </a>
+            </li>
+        </ul>
+
+        <span class="footer-copyright-section">
+            &copy; TuTangle 2013
+        </span>
+    </footer>
+  </BODY>
+</HTML>

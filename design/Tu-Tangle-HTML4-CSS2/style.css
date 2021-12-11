@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+header {
+  height: auto;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #7dd9e8;
+  /* padding: 0.7rem 3.3rem; */
+}
+
+.navbar {
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  float: left;
+  position: relative;
+  padding: 0.7rem 0;
+  display: block;
+}
+
+.logo-container {
+  width: 20vw;
+  height: 100%;
+  font-size: 3rem;
+  float: left;
+}
+
+.logo-container #logo {
+  padding: 1px;
+}
+
+.serchbar-container {
+  display: inline;
+  float: left;
+  position: relative;
+  width: 31vw;
+  margin-top: 2rem;
+}
+.serchbar-container #searchbar {
+  width: 80%;
+  background-color: #caeff7;
+  padding: 0.1rem 0.2rem;
+  float: left;
+  position: relative;
+}
+.serchbar-container #searchbar span {
+  display: inline;
+  width: auto;
+  float: left;
+  background-color: transparent;
+  margin: 0 0.1rem;
+  /* padding: 0.3rem 0.4rem; */
+  /* float: right; */
+}
+.serchbar-container #searchbar input {
+  width: 90%;
+  border: none;
+  background-color: transparent;
+  float: left;
+}
+.serchbar-container button {
+  /* float: left; */
+  margin-left: 0.5rem;
+}
+
+.navbar-user-section {
+  float: right;
+  margin-top: 1rem;
+}
+
+.navbar-user-section #username {
+  display: block;
+  text-align: right;
+  font-size: 1.3rem;
+}
+
+.navbar-user-section #user-links a {
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+#menubar-container {
+  position: absolute;
+  margin-bottom: 0;
+  /* margin-top: 1.3rem; */
+  vertical-align: middle;
+  /* padding: 2.4rem 0; */
+  width: 100vw;
+  height: 3rem;
+  display: table-cell;
+  /* padding-left: 5vw;
+  padding-right: 5vw; */
+  /* width: 100%; */
+  padding: 0.3rem 0;
+  position: relative;
+  /* display: inline-block; */
+  background-color: #f5f5f5;
+}
+
+#menubar-container #menubar {
+  margin-left: 5vw;
+  width: 60vw;
+  float: left;
+}
+#menubar-container #menubar a {
+  text-decoration: none;
+  margin: 0 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0px;
+}
+
+#menubar-container #notification-bar {
+  float: right;
+  margin-right: 5vw;
+  letter-spacing: 0px;
+}
+
+#notification-bar #invites-bar {
+  display: inline;
+  margin-right: 2rem;
+  /* width: 40vw; */
+  /* position: relative; */
+}
+#notification-bar span {
+  margin-right: 0.5rem;
+}
+
+.notification-icon-container i {
+  color: #2fc1da;
+}
+
+#notification-bar #requests-bar {
+  display: inline;
+  /* width: 40vw; */
+}
