@@ -2,8 +2,9 @@
 
 body {
   font-family: "Righteous", cursive;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0;
+  user-select: none;
 }
 
 .container {
@@ -11,6 +12,7 @@ body {
   padding: 3%;
   margin-left: auto;
   margin-right: auto;
+  /* border: 1px solid firebrick; */
 }
 
 h1 {
@@ -33,6 +35,34 @@ td {
   padding: 0.7rem;
 }
 
+th#sn {
+  width: 2%;
+}
+th#title {
+  width: 20%;
+}
+
+th#col-desc {
+  width: 30%;
+}
+
+th#to-code,
+th#to-demo {
+  width: 10%;
+  /* text-align: center; */
+}
+
+th#topic {
+  width: 13%;
+  text-align: center;
+}
+
+td:last-child {
+  padding-left: 40%;
+  padding-right: 40%;
+  text-decoration: none;
+}
+
 tr:nth-child(even) {
   background-color: whitesmoke;
 }
@@ -42,4 +72,32 @@ tr:nth-child(even) {
   padding: 1rem; */
   text-align: center;
   line-height: 0.5rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+i {
+  font-size: 1.8rem;
 }

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <title>Pratik | Assignments - LF</title>
 </head>
@@ -15,48 +16,57 @@
         <p id="batch">Batch: 40th</p>
         <p id="group">Group: D</p>
         <p id="rn">Roll: 14</p>
+        <i class="fas fa-chevron-down"></i>
     </div>
 
     <div class="container">    
 
         <div id="assignments-table"> 
-            <table style="width: 70%;">
+            <table>
                 <tr>
-                    <th>SN</th>
-                    <th>Title</th>
-                    <th>Source code</th>
-                    <th>Live Demo</th>
+                    <th id="sn">SN</th>
+                    <th id="title">Title</th>
+                    <th id="col-desc">Desc</th>
+                    <th id="to-code">Source code</th>
+                    <th id="to-demo">Live Demo</th>
+                    <th id="topic">Topic</th>
                     
                 </tr>
              
                 <tr>
                     <td>1</td>
                     <td>Git & GitHub</td>
+                    <td>Create a simple html page and host it via 'Github Pages'</td>
                     <td><a href="https://github.com/DaemonOfHell/web-dev/tree/main">Link to GitHub</a></td>
-                    <td><a href='#'>Click for Live Demo</a></td>
+                    <td><a href='#' class="tooltip" style="color: darkgray; cursor:not-allowed; text-decoration: none;">
+                        Click for Live Demo
+                        <span class="tooltiptext">
+                            You are currently viewing the Git Hub assignment 1 ;)
+                        </span>
+                        </a>
+                    </td>
+                    <td  class="tooltip">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltiptext">
+                            GitHub
+                        </span>
+                    </td>
                 </tr>
 
                 <tr>
                     <td>2</td>
-                    <td>Design Assignment (Tu-Tangle LoFi)</td>
+                    <td>Design Assignment <br>(Tu-Tangle LoFi)</td>
+                    <td>Sketch a LoFi for the given Tu-Tangle website sample.</td>
                     <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design">Link to GitHub</a></td>
                     <td><a href='https://raw.githubusercontent.com/DaemonOfHell/leapfrog-intern/main/design/lofi%232-tutangle.png'>Click for Live Demo</a></td>
+                    <td  class="tooltip">
+                        <i class="fab fa-figma"></i>
+                        <span class="tooltiptext">
+                            Design
+                        </span>
+                    </td>
                 </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td>sth to come</td>
-                    <td><a href="#">Link to GitHub</a></td>
-                    <td><a href='#'>Click for Live Demo</a></td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>sth to come</td>
-                    <td><a href="#">Link to GitHub</a></td>
-                    <td><a href='#'>Click for Live Demo</a></td>
-                </tr>
-                
+ 
             </table>
         </div>
     </div>
