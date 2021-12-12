@@ -1,13 +1,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
         "http://www.w3.org/TR/html4/strict.dtd">
 <HTML>
-  <HEAD>
-    <TITLE>The document title</TITLE>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title> TuTangle </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"  type="text/css">
+    <link rel="stylesheet" href="style.css"  type="text/css">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+    </style>
   </HEAD>
   <BODY>
-    <header>
+    <div class="header">
         <div class="navbar">
             <div class="logo-container">
                 <span id='logo'>TuTangle</span>
@@ -15,7 +20,7 @@
 
             <div class="serchbar-container">
                 <div id="searchbar">
-                    <input type="text" placeholder="Search by Team, Member, or Entry Title">
+                    <input type="text" value="Search by Team, Member, or Entry Title">
                     <span class='icon-clear'><i class="fas fa-times"></i></span>
                     <span class='icon-search'><i class="fas fa-search"></i></span>
                 </div>
@@ -50,7 +55,7 @@
                         Topic Boxes Invites -
                     </span>
 
-                    <span id="invites-count">
+                    <span class="invites-count">
                         2
                     </span>
                 </div>
@@ -64,19 +69,19 @@
                         Friend Requests -
                     </span>
 
-                    <span id="invites-count">
+                    <span class="invites-count">
                         0
                     </span>
                 </div> 
 
-                </div>
             </div>
         </div>
-    </header>
+    </div>
 
     <div class="body-container">
         <div class="body-container-left">
             <div class="recent-searches-container">
+                <h3 class="quick-links-heading">Recent Searches</h3>
                 <ul class="quick-links-ul">
                     <li class="recent-search">
                         <span class="search-title">Nick and the Bad Seeds</span>
@@ -94,7 +99,8 @@
             </div>
 
             <div class="recent-searches-by-category-container">
-                <ul class="quick-links-ul">
+                <h3 class="quick-links-heading">Recent Searches</h3>
+                <ul class="quick-links-ul"> 
                     <li class="recent-search">
                         <span class="search-title">Different Versions of the Tristan Und Isolde Prelude</span>
                         <button class="mini-icon-container">
@@ -136,15 +142,15 @@
         </div>
 
         <div class="body-container-center">
-
-            <div class="category-tabs-container">   
-                <h1 class="body-title">Entries</h1>
+        <h1 class="body-title">Entries</h1>
+            
+            <div class="category-tabs-container">       
 
                 <div class="category-tabs-container-left">
                     <p class="category-type">
                         All Entries
                     </p> 
-                    <button>
+                    <button class="selected">
                         All Members
                     </button>
                     <button>
@@ -163,14 +169,16 @@
                         New Comments
                     </button>
                 </div>
+                
+                <div class="ribbon"></div>
             </div> 
 
             <div class="post-container">
-                <img src="" alt="face" class="user-image-box">
+                <img src="./res/images/user1.PNG" alt="face" class="user-image-box">
                 <div class="post-info-section"> 
-                    <h2 class="post-title">
+                    <h4 class="post-title">
                         Day For Night by Francois Truffaut, a Ground Breaking film
-                    </h2>
+                    </h4>
                     <div class="post-sub-info-section">
                         <span class="by">
                             by <a href="#">Alan Coe</a>
@@ -178,7 +186,7 @@
                         <span class="on">
                             Feb 10, 2012
                         </span> |
-                        <span class="Subbed">
+                        <span class="subbed">
                             Subscribed
                         </span> 
                         <div class="topic-category-info">
@@ -188,16 +196,17 @@
                 </div>
 
             </div>
+            <hr>
 
             <div class="post-container">
-                <img src="" alt="face" class="user-image-box">
+                <img src="./res/images/user2.PNG" alt="face" class="user-image-box">
                 <div class="post-info-section">
                     <span class="dynamic-feature">
                         New Entry!
                     </span>
-                    <h2 class="post-title">
+                    <h4 class="post-title">
                         Blade Runner, The Director's Cut
-                    </h2>
+                    </h4>
                     <div class="post-sub-info-section">
                         <span class="by">
                             by <a href="#">Mary Pilot</a>
@@ -215,16 +224,17 @@
                 </div>
 
             </div>
+            <hr>
 
             <div class="post-container">
-                <img src="" alt="face" class="user-image-box">
+                <img src="./res/images/user3.PNG" alt="face" class="user-image-box">
                 <div class="post-info-section">
                     <span class="dynamic-feature">
                         New Comment!
                     </span>
-                    <h2 class="post-title">
+                    <h4 class="post-title">
                         The Best French Restaurant in Chicago
-                    </h2>
+                    </h4>
                     <div class="post-sub-info-section">
                         <span class="by">
                             by <a href="#">Jim Roy</a>
@@ -242,16 +252,17 @@
                 </div>
 
             </div>
+            <hr>
 
             <div class="post-container">
-                <img src="" alt="face" class="user-image-box">
+                <img src="./res/images/user4.PNG" alt="face" class="user-image-box">
                 <div class="post-info-section">
                     <!-- <span class="dynamic-feature">
                         New Entry
                     </span> -->
-                    <h2 class="post-title">
-                         The Meaning of Night. Dark BOok but Incredibly Well Written.
-                    </h2>
+                    <h4 class="post-title">
+                         The Meaning of Night. Dark Book but Incredibly Well Written.
+                    </h4>
                     <div class="post-sub-info-section">
                         <span class="by">
                             by <a href="#">John-Peter Moise</a>
@@ -269,16 +280,17 @@
                 </div>
 
             </div>
+            <hr>
 
             <div class="post-container">
-                <img src="" alt="face" class="user-image-box">
+                <img src="./res/images/user5.PNG" alt="face" class="user-image-box">
                 <div class="post-info-section">
                     <span class="dynamic-feature">
                         Topic Box Invite!
                     </span>
-                    <h2 class="post-title">
+                    <h4 class="post-title">
                          Pea Pesto
-                    </h2>
+                    </h4>
                     <div class="post-sub-info-section">
                         <span class="by">
                             by <a href="#">Marianne Gig</a>
@@ -296,9 +308,13 @@
                 </div>
 
             </div>
+            <hr>
+
+
         </div>
  
         <div class="body-container-right">
+            <h3 class="quick-links-heading"> Video Tutorials </h3>
             <ul class="quick-links-ul">
                 <li class="li-link">
                     <a href="#">Overview of TuTangle</a>
@@ -331,7 +347,7 @@
         </div>
     </div>
     
-    <footer>
+    <div class='footer'>
         <ul class="footer-links">
             <li class="footer-link">
                 <a href="#"> About </a>
@@ -353,6 +369,6 @@
         <span class="footer-copyright-section">
             &copy; TuTangle 2013
         </span>
-    </footer>
+    </div>
   </BODY>
 </HTML>
