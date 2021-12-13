@@ -2,27 +2,31 @@
         "http://www.w3.org/TR/html4/strict.dtd">
 <HTML>
   <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title> TuTangle </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> TuTangle | Home Search</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"  type="text/css">
     <link rel="stylesheet" href="style.css"  type="text/css">
+    <link rel="stylesheet" href="reset.css"  type="text/css">
+    <link rel="stylesheet" href="layout.css"  type="text/css">
     <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
     </style>
   </HEAD>
   <BODY>
+    <div class="main-container-wrapper">
+
     <div class="header">
+        
         <div class="navbar">
-            <div class="logo-container">
-                <span id='logo'>TuTangle</span>
+            <div class="logo-container"> 
+                <img id='logo' src='./res/icons/logo.png' alt="" width="223px;"> 
             </div>
 
             <div class="serchbar-container">
                 <div id="searchbar">
-                    <input type="text" value="Search by Team, Member, or Entry Title">
-                    <span class='icon-clear'><i class="fas fa-times"></i></span>
-                    <span class='icon-search'><i class="fas fa-search"></i></span>
+                    <input type="text" value="Search by Team, Member, or Entry Title" style="background-image:url('./res/icons/search-inactive.png')">
                 </div>
                 <button id='btn-search'>Search</button>
             </div>
@@ -36,7 +40,7 @@
                 </div>
             </div>
         </div>
-
+<div class="container"> 
         <div id="menubar-container">
             <div id="menubar">
                 <a href="#">Create New Entries</a>
@@ -46,19 +50,6 @@
             </div>
 
             <div id="notification-bar">
-                <div id="invites-bar">
-                    <span class="notification-icon-container">
-                        <i class="fas fa-box"></i>
-                    </span>
-
-                    <span>
-                        Topic Boxes Invites -
-                    </span>
-
-                    <span class="invites-count">
-                        2
-                    </span>
-                </div>
 
                 <div id="requests-bar">
                     <span class="notification-icon-container">
@@ -66,33 +57,47 @@
                     </span>
 
                     <span>
-                        Friend Requests -
+                        Friend Requests  -
                     </span>
 
                     <span class="invites-count">
                         0
                     </span>
                 </div> 
+                <div id="invites-bar">
+                    <span class="notification-icon-container">
+                        <i class="fas fa-box"></i>
+                    </span>
 
+                    <span>
+                        Topic Boxes Invites  -
+                    </span>
+
+                    <span class="invites-count">
+                        2
+                    </span>
+                </div>
+ 
             </div>
         </div>
+    </div>
     </div>
 
     <div class="body-container">
         <div class="body-container-left">
-            <div class="recent-searches-container">
+            <div class="recent-searches-by-downloads-container">
                 <h3 class="quick-links-heading">Recent Searches</h3>
                 <ul class="quick-links-ul">
                     <li class="recent-search">
-                        <span class="search-title">Nick and the Bad Seeds</span>
-                        <a href="" class="mini-icon-container">
-                            <i class="fas fa-download"></i>
+                        <span class="search-title">Nick Cave and the <br> Bad Seeds</span>
+                        <a href="" class="to-download">
+                            <img src="./res/icons/download.png" alt="" class="mini-icon">
                         </a>
                     </li>
                     <li class="recent-search">
                         <span class="search-title">African Animals</span>
-                        <a href="" class="mini-icon-container">
-                            <i class="fas fa-download"></i>
+                        <a href="" class="to-download">
+                            <img src="./res/icons/download.png" alt="" class="mini-icon">
                         </a>
                     </li>
                 </ul>
@@ -103,39 +108,27 @@
                 <ul class="quick-links-ul"> 
                     <li class="recent-search">
                         <span class="search-title">Different Versions of the Tristan Und Isolde Prelude</span>
-                        <button class="mini-icon-container">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <img src="./res/icons/bars-solid.svg" alt="" class="mini-icon">            
                     </li>
                     <li class="recent-search">
                         <span class="search-title">Music</span>
-                        <button class="mini-icon-container">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <img src="./res/icons/bars-solid.svg" alt="" class="mini-icon">            
                     </li>
                     <li class="recent-search">
                         <span class="search-title">Guitar</span>
-                        <button class="mini-icon-container">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <img src="./res/icons/bars-solid.svg" alt="" class="mini-icon">            
                     </li>
                     <li class="recent-search">
                         <span class="search-title">Bob Cohen</span>
-                        <button class="mini-icon-container">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <img src="./res/icons/bars-solid.svg" alt="" class="mini-icon">            
                     </li>
                     <li class="recent-search">
                         <span class="search-title">Mark Schanck</span>
-                        <button class="mini-icon-container">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <img src="./res/icons/bars-solid.svg" alt="" class="mini-icon">            
                     </li>
                     <li class="recent-search">
                         <span class="search-title">Jefferson Dickey</span>
-                        <button class="mini-icon-container">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                        <img src="./res/icons/bars-solid.svg" alt="" class="mini-icon">            
                     </li>
                 </ul>
             </div>
@@ -150,24 +143,30 @@
                     <p class="category-type">
                         All Entries
                     </p> 
-                    <button class="selected">
-                        All Members
-                    </button>
-                    <button>
-                        Friends
-                    </button>
+                    <div class="category-tab-button-wrapper">
+                       
+                        <button>
+                            All Members
+                        </button> 
+                        <button>
+                            Friends
+                        </button> 
+                    </div>
+                   
                 </div>
 
                 <div class="category-tabs-container-right">
                     <p class="category-type">
                         Subscribed
                     </p> 
-                    <button>
-                        New Entries
-                    </button>
-                    <button>
-                        New Comments
-                    </button>
+                    <div class="category-tab-button-wrapper"> 
+                        <button>
+                            New Entries
+                        </button> 
+                        <button>
+                            New Comments
+                        </button> 
+                    </div>
                 </div>
                 
                 <div class="ribbon"></div>
@@ -177,7 +176,7 @@
                 <img src="./res/images/user1.PNG" alt="face" class="user-image-box">
                 <div class="post-info-section"> 
                     <h4 class="post-title">
-                        Day For Night by Francois Truffaut, a Ground Breaking film
+                        Day For Night by François Truffaut, a Ground Breaking film
                     </h4>
                     <div class="post-sub-info-section">
                         <span class="by">
@@ -213,10 +212,8 @@
                         </span> |
                         <span class="on">
                             Feb 8, 2012
-                        </span> 
-                        <!-- <span class="Subbed">
-                            
-                        </span>  -->
+                        </span>  
+
                         <div class="topic-category-info">
                             From Topic Box: <a href="#">Behind the Scene</a>
                         </div>
@@ -241,10 +238,8 @@
                         </span> |
                         <span class="on">
                             Feb 7, 2012
-                        </span> 
-                        <!-- <span class="Subbed">
-                            Subscribed
-                        </span>  -->
+                        </span>  
+
                         <div class="topic-category-info">
                             From Topic Box: <a href="#">Chicago Restaurants Reviews</a>
                         </div>
@@ -256,10 +251,8 @@
 
             <div class="post-container">
                 <img src="./res/images/user4.PNG" alt="face" class="user-image-box">
-                <div class="post-info-section">
-                    <!-- <span class="dynamic-feature">
-                        New Entry
-                    </span> -->
+                <div class="post-info-section"> 
+
                     <h4 class="post-title">
                          The Meaning of Night. Dark Book but Incredibly Well Written.
                     </h4>
@@ -285,7 +278,7 @@
             <div class="post-container">
                 <img src="./res/images/user5.PNG" alt="face" class="user-image-box">
                 <div class="post-info-section">
-                    <span class="dynamic-feature">
+                    <span class="dynamic-feature"  style="color: #d4401c;">
                         Topic Box Invite!
                     </span>
                     <h4 class="post-title">
@@ -298,9 +291,7 @@
                         <span class="on">
                             Feb 6, 2012
                         </span> 
-                        <!-- <span class="Subbed">
-                            Subscribed
-                        </span>  -->
+                       
                         <div class="topic-category-info">
                             From Topic Box: <a href="#">Favorite Recipes</a>
                         </div>
@@ -316,31 +307,31 @@
         <div class="body-container-right">
             <h3 class="quick-links-heading"> Video Tutorials </h3>
             <ul class="quick-links-ul">
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#">Overview of TuTangle</a>
                 </li>
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#">Searching the Site</a>
                 </li>
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#">Previous & Saved Searches</a>
                 </li>
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#">The Topic Box Page</a>
                 </li>
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#">Creating a Topic Box</a>
                 </li>
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#"> View Topic Box Entries </a>
                 </li>
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#"> Creating an Entry </a>
                 </li>
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#"> Privacy Settings </a>
                 </li>
-                <li class="li-link">
+                <li class="quick-links">
                     <a href="#"> Co-Authoring </a>
                 </li>
             </ul>
@@ -348,27 +339,30 @@
     </div>
     
     <div class='footer'>
-        <ul class="footer-links">
-            <li class="footer-link">
-                <a href="#"> About </a>
-            </li>
-            <li class="footer-link">
-                <a href="#"> Contact Us </a>
-            </li>
-            <li class="footer-link">
-                <a href="#"> Terms of Use </a>
-            </li>
-            <li class="footer-link">
-                <a href="#"> Privacy Policy </a>
-            </li>
-            <li class="footer-link">
-                <a href="#"> Feedback </a>
-            </li>
-        </ul>
+        <div class="container"> 
+            <ul class="footer-links">
+                <li class="footer-link">
+                    <a href="#"> About   </a>
+                </li>
+                <li class="footer-link">
+                    <a href="#"> Contact Us </a>
+                </li>
+                <li class="footer-link">
+                    <a href="#"> Terms of Use </a>
+                </li>
+                <li class="footer-link">
+                    <a href="#"> Privacy Policy </a>
+                </li>
+                <li class="footer-link">
+                    <a href="#"> Feedback </a>
+                </li>
+            </ul>
 
-        <span class="footer-copyright-section">
-            &copy; TuTangle 2013
-        </span>
+            <span class="footer-copyright-section">
+                &copy; TuTangle 2013
+            </span>
+        </div>
     </div>
+</div>
   </BODY>
 </HTML>

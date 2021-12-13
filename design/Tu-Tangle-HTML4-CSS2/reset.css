@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 11px;
+  font-family: Mulish;
+  font-weight: 900;
+}
+
+.serchbar-container #searchbar input:focus {
+  background-image: url("./res/icons/search-active.png");
+  outline: none;
+}
+
+.serchbar-container #btn-search {
+  float: left;
+  margin-left: 7px;
+  width: 53px;
+  height: 20px;
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  background-image: url("./res/icons/btn-search.png");
+  cursor: pointer;
+}
+
+.serchbar-container #searchbar input:active {
+  background-color: white;
+}
+
+.body-container-center
+  .category-tabs-container
+  .category-tabs-container-left
+  .category-tab-button-wrapper
+  button:focus,
+.body-container-center
+  .category-tabs-container
+  .category-tabs-container-right
+  .category-tab-button-wrapper
+  button:focus {
+  background-color: #2fc1da;
+  background-image: url("./res/icons/tab-blue.png");
+  color: white;
+}
+
+.footer ul li.footer-link a:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\f111";
+  font-size: 4px;
+  color: white;
+  clear: both;
+  display: inline;
+}
