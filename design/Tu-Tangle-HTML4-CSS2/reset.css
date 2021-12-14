@@ -7,14 +7,17 @@
   font-weight: 900;
 }
 
-.serchbar-container #searchbar input:focus {
-  background-image: url("./res/icons/search-active.png");
+.serchbar-container #searchbar #searchbar-inactive input:focus {
+  background-image: url("./res/icons/search-active2.png");
+  background-image: none !important;
+  background-color: transparent;
   outline: none;
+  color: #2fc1da;
 }
 
 .serchbar-container #btn-search {
   float: left;
-  margin-left: 7px;
+  margin-left: 17px;
   width: 53px;
   height: 20px;
   border: none;
@@ -22,10 +25,6 @@
   color: white;
   background-image: url("./res/icons/btn-search.png");
   cursor: pointer;
-}
-
-.serchbar-container #searchbar input:active {
-  background-color: white;
 }
 
 .body-container-center

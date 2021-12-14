@@ -12,18 +12,22 @@
   background-color: #f5f5f5;
 }
 
-.navbar {
-  width: 98%;
-  height: 85px;
+.header .navbar-section {
   background-color: #7dd9e8;
+}
+
+.navbar {
+  width: 939px;
+  height: 85px;
+  background-color: inherit;
   position: relative;
   padding: 14px;
+  margin: 0 auto;
 }
 
 .logo-container {
   float: left;
   margin-right: 24px;
-  margin-left: 183px;
   margin-top: 23px;
 }
 

@@ -5,21 +5,47 @@
 }
 .serchbar-container #searchbar {
   float: left;
-}
-
-.serchbar-container #searchbar input {
   width: 268px;
   height: 20px;
+}
+
+.serchbar-container #searchbar img {
+  position: absolute;
+  float: left;
+  color: white;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.serchbar-container #searchbar #searchbar-inactive {
+  position: absolute;
+  width: 268px;
+  height: 20px;
+  margin-top: 0;
+  margin-left: 0;
+  cursor: pointer;
+}
+.serchbar-container #searchbar #searchbar-inactive input {
+  width: 100%;
+  height: inherit;
+  position: absolute;
   padding-left: 8px;
   border: none;
   background-color: transparent;
   float: left;
 }
 
-.navbar-user-section {
+.serchbar-container #searchbar #searchbar-inactive i {
   position: absolute;
-  right: 0;
-  margin-right: 200px;
+  right: 20px;
+  height: 100%;
+  padding: 4px;
+  cursor: pointer;
+}
+.navbar-user-section {
+  float: right;
+  margin-right: 20px;
   font-weight: 900;
   line-height: 20px;
   margin-top: 20px;
@@ -213,7 +239,6 @@ hr {
   float: left;
   margin-left: 10px;
   line-height: 15px;
-  /* font-size: px; */
 }
 .body-container-center .post-container .post-info-section h4.post-title {
   font-weight: 800;
@@ -223,14 +248,14 @@ hr {
 .post-container .post-info-section .post-sub-info-section {
   margin-top: 1%;
   line-height: 16px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .post-sub-info-section .by,
 .post-sub-info-section .by a,
 .post-sub-info-section .on,
 .post-sub-info-section .subbed,
 .post-sub-info-section .topic-category-info {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 900;
   color: #707070;
 }
@@ -238,7 +263,7 @@ hr {
 .body-container-center .post-container .post-info-section .by a {
   text-decoration: none;
   color: #2fc1da;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .body-container-center
@@ -247,12 +272,12 @@ hr {
   .post-sub-info-section
   .subbed {
   color: #82a340;
-  font-size: 14px;
+  font-size: 12px;
 }
 .post-sub-info-section .topic-category-info a {
   color: #2fc1da;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .body-container-right .quick-links-ul li.quick-links a {
