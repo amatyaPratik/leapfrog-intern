@@ -201,6 +201,7 @@ hr {
 .body-container-center .post-container .dynamic-feature {
   text-transform: uppercase;
   font-weight: 900;
+  font-size: 12px;
   color: #11bddb;
 }
 
@@ -212,20 +213,24 @@ hr {
   float: left;
   margin-left: 10px;
   line-height: 15px;
+  /* font-size: px; */
 }
 .body-container-center .post-container .post-info-section h4.post-title {
-  font-size: 14px;
   font-weight: 800;
+  font-size: 16px;
 }
 
 .post-container .post-info-section .post-sub-info-section {
   margin-top: 1%;
+  line-height: 16px;
+  font-size: 14px;
 }
+.post-sub-info-section .by,
 .post-sub-info-section .by a,
 .post-sub-info-section .on,
 .post-sub-info-section .subbed,
 .post-sub-info-section .topic-category-info {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 900;
   color: #707070;
 }
@@ -233,14 +238,21 @@ hr {
 .body-container-center .post-container .post-info-section .by a {
   text-decoration: none;
   color: #2fc1da;
+  font-size: 14px;
 }
 
-.body-container-center .post-container .post-info-section .subbed {
+.body-container-center
+  .post-container
+  .post-info-section
+  .post-sub-info-section
+  .subbed {
   color: #82a340;
+  font-size: 14px;
 }
 .post-sub-info-section .topic-category-info a {
   color: #2fc1da;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .body-container-right .quick-links-ul li.quick-links a {
