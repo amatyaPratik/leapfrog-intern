@@ -783,7 +783,6 @@ hr {
 
   #menubar-container #menubar {
     float: left;
-
     /* padding: 10px; */
   }
   #menubar-container #menubar a {
@@ -1048,7 +1047,7 @@ hr {
 
   .footer .footer-copyright-section {
     position: absolute;
-    right: 36px;
+    right: 60%;
     color: white;
   }
 }
