@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 14px;
+  font-family: Mulish;
+  font-weight: 900;
+}
+
+.serchbar-container #searchbar #searchbar-inactive input:focus {
+  background-image: url("./res/icons/search-active2.png");
+  background-image: none !important;
+  background-color: transparent;
+  outline: none;
+  color: #2fc1da;
+}
+
+.serchbar-container #btn-search {
+  float: left;
+  display: none;
+  /* margin-left: 10px; */
+  width: 53px;
+  height: 20px;
+  margin: 2px 5px;
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  background-image: url("./res/icons/btn-search.png");
+  cursor: pointer;
+}
+
+@media screen and (min-width: 709px) {
+  .body-container-left
+    .collapsed-left-right
+    .collapsed-dropdown-tabs
+    .btn-toggle-recents:focus,
+  .body-container-left
+    .collapsed-left-right
+    .collapsed-dropdown-tabs
+    .btn-toggle-videos:focus {
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 1002px) {
+  * {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 11px;
+    font-family: Mulish;
+    font-weight: 900;
+    /* position: relative; */
+  }
+
+  .serchbar-container #searchbar #searchbar-inactive input:focus {
+    background-image: url("./res/icons/search-active2.png");
+    background-image: none !important;
+    background-color: transparent;
+    outline: none;
+    color: #2fc1da;
+  }
+
+  .serchbar-container #btn-search {
+    display: initial;
+    float: left;
+    margin-left: 17px;
+    width: 53px;
+    height: 20px;
+    border: none;
+    text-transform: uppercase;
+    color: white;
+    background-image: url("./res/icons/btn-search.png");
+    cursor: pointer;
+  }
+
+  .body-container-center
+    .category-tabs-container
+    .category-tabs-container-left
+    .category-tab-button-wrapper
+    button:focus,
+  .body-container-center
+    .category-tabs-container
+    .category-tabs-container-right
+    .category-tab-button-wrapper
+    button:focus {
+    background-color: #2fc1da;
+    background-image: url("./res/icons/tab-blue.png");
+    color: white;
+  }
+
+  .footer ul li.footer-link a:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\f111";
+    font-size: 4px;
+    color: white;
+    clear: both;
+    display: inline;
+  }
+}
