@@ -61,8 +61,7 @@ header {
 .sidenav {
   position: fixed;
   line-height: 10px;
-  /* width: 40%; */
-  /* margin-top: 5%; */
+  background-color: darkblue;
   z-index: 999;
 }
 .sidenav a {
