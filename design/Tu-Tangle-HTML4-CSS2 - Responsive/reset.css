@@ -7,6 +7,12 @@
   font-weight: 900;
 }
 
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .serchbar-container #searchbar #searchbar-inactive input:focus {
   background-image: url("./res/icons/search-active2.png");
   background-image: none !important;

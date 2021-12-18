@@ -452,7 +452,7 @@ hr {
 
   #notification-bar #requests-bar {
     float: left;
-    margin-left: 20px;
+    margin-right: 20px;
   }
 
   #notification-bar #requests-bar span:nth-child(1):hover:after {
@@ -764,7 +764,7 @@ hr {
   }
   .navbar-user-section {
     float: right;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     font-weight: 900;
     line-height: 20px;
     margin-top: 20px;
@@ -778,11 +778,12 @@ hr {
 
   .navbar-user-section #user-links a {
     text-decoration: none;
-    margin: 0 4px;
+    /* margin: 0 4px; */
   }
 
   #menubar-container #menubar {
     float: left;
+    /* border: 2px solid gold; */
     /* padding: 10px; */
   }
   #menubar-container #menubar a {
@@ -895,6 +896,7 @@ hr {
     .category-tabs-container
     .category-tabs-container-right
     p {
+    font-size: 11px;
     padding: 14px 0;
     font-weight: 600;
   }
@@ -928,6 +930,7 @@ hr {
     width: 114px;
     height: 28px;
     margin: 0 5px;
+    font-size: 11px;
     background-color: transparent;
     background-image: url("./res/icons/tab-gray.png");
     color: #4d4d4d;
@@ -949,7 +952,7 @@ hr {
     width: 100%;
     float: left;
     color: #707070;
-    margin: 15px 0;
+    margin: 10px 0;
   }
 
   hr {
@@ -959,13 +962,13 @@ hr {
   .body-container-center .post-container .dynamic-feature {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 12px;
+    font-size: 10px;
     color: #11bddb;
   }
 
   .body-container-center .post-container img {
     float: left;
-    width: 70px;
+    max-width: 70px;
   }
 
   .body-container-center .post-container .post-info-section {
@@ -973,10 +976,15 @@ hr {
     margin-left: 10px;
     line-height: 15px;
     width: 80%;
+    /* border: 1px solid darkblue; */
   }
   .body-container-center .post-container .post-info-section h4.post-title {
     font-weight: 800;
     font-size: 16px;
+    margin-left: 0px;
+
+    padding: 0;
+    word-wrap: break-word;
   }
 
   .post-container .post-info-section .post-sub-info-section {
@@ -1028,9 +1036,11 @@ hr {
   .footer ul {
     display: inline;
     float: left;
-    width: 60%;
-    position: absolute;
-    margin-left: 15%;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    margin: 0 auto;
+    /* margin-left: 15%; */
     /* list-style-type: circle; */
   }
 
