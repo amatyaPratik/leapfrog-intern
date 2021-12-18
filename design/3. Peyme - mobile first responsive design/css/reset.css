@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.front {
+  z-index: 23;
+}
+
+.back {
+  z-index: 21;
+}
+
+.absr {
+  position: absolute;
+  right: 0;
+}
+
+.absl {
+  position: absolute;
+  left: 0;
+}
+
+.none {
+  font: none;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.clear-right::before {
+  content: "";
+  clear: right;
+  display: table;
+}
+
+.clear-left::before {
+  content: "";
+  clear: left;
+  display: table;
+}

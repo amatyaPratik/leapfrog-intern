@@ -1,0 +1,8 @@
+design project time estimation:
+
+1. image resource importing and compiling: 1hour  -  40mins
+2. markup / html : 1 hours
+3. styling /css : 2 hours
+4. make responsive: 4 hours
+-----------------------------------------------
+= 8 hours 
