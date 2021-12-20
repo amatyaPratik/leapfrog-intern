@@ -1,7 +1,7 @@
 .serchbar-container {
   float: left;
   position: relative;
-  margin-top: 40px;
+  margin-top: 18px;
 }
 .serchbar-container #searchbar {
   float: left;
@@ -33,6 +33,8 @@
   padding-left: 8px;
   border: none;
   background-color: transparent;
+  color: #95a3a9;
+  font-weight: 700;
   float: left;
 }
 
@@ -45,21 +47,20 @@
 }
 .navbar-user-section {
   float: right;
-  margin-right: 20px;
-  font-weight: 900;
   line-height: 20px;
-  margin-top: 20px;
 }
 
 .navbar-user-section #username {
   display: block;
   text-align: right;
   font-size: 14px;
+  font-weight: 700;
 }
 
 .navbar-user-section #user-links a {
   text-decoration: none;
   margin: 0 4px;
+  font-weight: 700;
 }
 
 #menubar-container #menubar {
@@ -68,21 +69,28 @@
 #menubar-container #menubar a {
   text-decoration: none;
   margin: 0 15px;
-  font-weight: 800;
+  font-weight: 700;
+  padding: 10px 0;
   letter-spacing: 0px;
 }
 
 #menubar-container #notification-bar {
   float: right;
-  font-weight: 400;
 }
 
 #notification-bar #invites-bar {
   float: right;
   margin-right: 30px;
 }
+#notification-bar #invites-bar .invites-count::before,
+#notification-bar #requests-bar .requests-count::before {
+  content: "-";
+  display: inline;
+}
+
 #notification-bar span {
   margin-right: 4px;
+  font-weight: 700;
 }
 
 .notification-icon-container i {
@@ -95,6 +103,9 @@
 
 #notification-bar #requests-bar {
   float: right;
+}
+#notification-bar #requests-bar span {
+  color: gray;
 }
 
 div[class^="body-container-"] h3 {
@@ -119,6 +130,10 @@ ul.quick-links-ul li:hover {
   position: relative;
   display: table;
 }
+/* .body-container-left .recent-searches-by-category-container ul.quick-links-ul {
+  position: relative;
+  display: table;
+} */
 
 .recent-searches-by-downloads-container ul.quick-links-ul li.recent-search {
   width: 88%;
@@ -134,7 +149,7 @@ ul.quick-links-ul li:hover {
 ul.quick-links-ul li.recent-search span.search-title {
   float: left;
   width: 75%;
-  font-weight: 900;
+  font-weight: 700;
 }
 .recent-searches-by-downloads-container ul.quick-links-ul li.recent-search a {
   text-decoration: none;
@@ -153,8 +168,9 @@ ul.quick-links-ul li.recent-search img {
 }
 
 .body-container-center h1 {
-  font-size: 22px;
-  color: #4d4d4d;
+  font-size: 30px;
+  font-weight: 500;
+  /* color: #4d4d4d; */
   margin: 0 0 12px 2px;
 }
 
@@ -164,7 +180,7 @@ ul.quick-links-ul li.recent-search img {
   .category-tabs-container-right
   p {
   padding: 14px 0;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .body-container-center
@@ -198,7 +214,6 @@ ul.quick-links-ul li.recent-search img {
   margin: 0 5px;
   background-color: transparent;
   background-image: url("./res/icons/tab-gray.png");
-  color: #4d4d4d;
   border: none;
   font-weight: 700;
 }
@@ -221,12 +236,13 @@ ul.quick-links-ul li.recent-search img {
 }
 
 hr {
-  background-color: gray;
+  background-color: lightgray;
+  height: 0.3px;
 }
 
 .body-container-center .post-container .dynamic-feature {
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 12px;
   color: #11bddb;
 }
@@ -239,16 +255,18 @@ hr {
   float: left;
   margin-left: 10px;
   line-height: 15px;
+  width: 82%;
 }
 .body-container-center .post-container .post-info-section h4.post-title {
-  font-weight: 800;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .post-container .post-info-section .post-sub-info-section {
-  margin-top: 1%;
+  margin-top: 3px;
   line-height: 16px;
   font-size: 12px;
+  font-weight: 400;
 }
 .post-sub-info-section .by,
 .post-sub-info-section .by a,
@@ -256,14 +274,15 @@ hr {
 .post-sub-info-section .subbed,
 .post-sub-info-section .topic-category-info {
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 700;
   color: #707070;
 }
 
 .body-container-center .post-container .post-info-section .by a {
   text-decoration: none;
-  color: #2fc1da;
+  color: #2195aa;
   font-size: 12px;
+  font-weight: 800;
 }
 
 .body-container-center
@@ -273,29 +292,28 @@ hr {
   .subbed {
   color: #82a340;
   font-size: 12px;
+  font-weight: 800;
 }
 .post-sub-info-section .topic-category-info a {
-  color: #2fc1da;
+  color: #2195aa;
   text-decoration: none;
   font-size: 12px;
+  font-weight: 800;
 }
 
 .body-container-right .quick-links-ul li.quick-links a {
   width: 100%;
   color: black;
-  font-weight: 800;
   position: relative;
   display: block;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 700;
   text-align: left;
 }
 
 .footer ul {
-  display: inline;
   float: left;
-  width: 70%;
-  list-style-type: circle;
+  font-size: 10px;
 }
 
 .footer ul li.footer-link {
@@ -307,10 +325,11 @@ hr {
 .footer ul li.footer-link a {
   text-decoration: none;
   color: white;
+  font-weight: 600;
 }
 
 .footer .footer-copyright-section {
-  position: absolute;
-  right: 36px;
+  float: right;
   color: white;
+  font-weight: 600;
 }
