@@ -81,18 +81,22 @@ header {
 section {
   height: 100%;
 }
+section#home .container {
+  background-image: url("../res/vectors/home/Union.svg");
+  background-repeat: no-repeat;
+}
 section#home .container .btn-container {
   margin: 0 auto;
   width: 50%;
 }
-section#home .container .btn-container .btn-tour,
-section#home .container .btn-container .btn-start {
+section#home .container .btn-container button.btn-tour,
+section#home .container .btn-container button.btn-start {
   font-size: 14px;
   display: table-cell;
   vertical-align: middle;
-  border: 2px solid lightblue;
-  margin: 5px;
+  margin: 5px 0;
   border-radius: 10px;
+  border: none;
   float: left;
   padding: 3% 20%;
   height: 40px;
@@ -157,7 +161,7 @@ section#download .btn-container {
 section#partners .logos .tm {
   max-height: 30px;
   float: left;
-  margin: 3%;
+  margin: 0 3%;
 }
 
 .features-cards {
@@ -171,6 +175,8 @@ section#partners .logos .tm {
 }
 .features-cards .feature img {
   max-width: 160px;
+  box-shadow: 0 0 25px #eef4fa;
+  /* border: 2px solid deeppink; */
 }
 
 footer .footer-links div:nth-child(4) p.small-text {
@@ -256,6 +262,10 @@ footer .footer-outro-bar ul {
     width: 40%;
     text-align: left;
   }
+  #step #step-info p {
+    padding: 0;
+  }
+
   #steps #step-info h1 {
     float: left;
   }
@@ -323,7 +333,7 @@ footer .footer-outro-bar ul {
     float: left;
     height: 40px;
     width: auto;
-    margin-right: 3%;
+    margin: 0 3%;
   }
   footer .footer-links #subscribe {
     padding: 5px;
@@ -347,37 +357,62 @@ footer .footer-outro-bar ul {
   section#home {
     background-image: url("../res/vectors/home/presentation.png");
     background-size: contain;
-    background-position: 70% 140%;
+    background-position: 60%;
     background-repeat: no-repeat;
     background-color: transparent;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   section#home .container {
     text-align: left;
   }
-
+  section#home .container #introhead {
+    overflow: hidden;
+    line-height: 40px;
+  }
   section#home .container #introhead,
   section#home .container #introsubhead {
-    width: 50%;
+    width: 60%;
   }
   section#home .container .btn-container {
     margin-left: 0;
+    width: 40%;
   }
-  section#home .container .btn-container .btn-tour,
-  section#home .container .btn-container .btn-start {
+  section#home .container .btn-container button.btn-tour,
+  section#home .container .btn-container button.btn-start {
     font-size: 14px;
     width: 160px;
-    height: 20px;
-    margin: 1%;
-    padding: 20px 0;
-    padding-left: 30px;
+    width: 80%;
+    margin: 2px 0;
+    height: 15%;
     overflow: hidden;
-    display: table-cell;
-    vertical-align: middle;
+    /* display: table-cell;
+    vertical-align: bottom; */
     border-radius: 10px;
+    /* float: left; */
+    /* display: block; */
+    text-align: center;
+    position: relative;
+  }
+  section#home .container .btn-container button.btn-tour span,
+  section#home .container .btn-container button.btn-start span {
+    margin-left: 0;
+    padding: 4px 0px;
+    /* padding: 0/; */
     float: left;
   }
-
+  section#home .container .btn-container button.btn-tour i {
+    float: left;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    padding: 0 6px;
+  }
+  section#home .container .btn-container button.btn-start i {
+    font-size: 15px;
+    padding: 5px 6px;
+  }
   section#reasons .cards {
     float: left;
     width: 100%;
@@ -485,7 +520,7 @@ footer .footer-outro-bar ul {
   }
 
   footer .footer-links {
-    padding: 0 5%;
+    padding: 2% 5% 0 5%;
   }
   section#partners {
     padding: 60px 0;
@@ -502,14 +537,16 @@ footer .footer-outro-bar ul {
     margin: 0;
   }
   footer .footer-links div:nth-child(2) {
-    width: 31%;
+    width: 22%;
     padding: 0 5px;
     margin: 0;
+    margin-left: 10%;
   }
   footer .footer-links div:nth-child(3) {
-    width: 31%;
+    width: 22%;
     padding: 0 5px;
-    margin: 0;
+    /* margin: 0; */
+    margin-left: 10%;
   }
   footer .footer-links div:nth-child(4) {
     width: 100%;
@@ -545,7 +582,7 @@ footer .footer-outro-bar ul {
   }
   section#home {
     background-size: 100%;
-    background-position: 100% 10%;
+    background-position: top;
   }
   section#home .container {
     padding: 5% 0;
@@ -553,17 +590,45 @@ footer .footer-outro-bar ul {
 
   section#home .container #introhead,
   section#home .container #introsubhead {
-    width: 40%;
+    width: 44%;
   }
   section#home .container .btn-container {
     margin-left: 0;
     width: fit-content;
+    width: 380px;
+    height: 56px;
+    overflow: hidden;
   }
-  section#home .container .btn-container .btn-tour,
-  section#home .container .btn-container .btn-start {
+  section#home .container .btn-container button.btn-tour {
+    width: 150px;
+    height: 99%;
+    padding: 0px;
+    float: left;
+  }
+  section#home .container .btn-container button.btn-start {
+    width: 180px;
+    height: 99%;
+    float: left;
+    padding: 0 0 0 30px;
     margin: 0;
+    text-align: center;
   }
-
+  section#home .container .btn-container button.btn-tour span {
+    font-size: 18px;
+  }
+  section#home .container .btn-container button.btn-start span {
+    font-size: 18px;
+    float: left;
+    margin-right: 5px;
+  }
+  section#home .container .btn-container button.btn-tour i {
+    float: left;
+    width: 40px;
+  }
+  section#home .container .btn-container button.btn-start i {
+    float: left;
+    font-size: 18px;
+  }
   section#reasons h1.head {
     font-size: 30px;
   }
@@ -695,12 +760,12 @@ footer .footer-outro-bar ul {
   }
 
   #download .btn-container {
-    width: 67%;
+    width: 50%;
     margin-top: 10%;
   }
 
   #download .btn-container a {
-    width: 25%;
+    width: 30%;
     float: left;
     margin-right: 3%;
   }
@@ -736,7 +801,7 @@ footer .footer-outro-bar ul {
   #support .container {
     padding: 90px 0;
     background-size: 20%;
-    background-position: 96% 75%;
+    background-position: 82% 94%;
   }
   #support .container .image-container {
     z-index: -1;
