@@ -1,31 +1,36 @@
 
 let currentImg = 0
- 
+const MAX_WIDTH = 300
+const MAX_HEIGHT = 200
+const STEP = 4
+
+let imgTags
 let interval
 
 //SETUP the CAROUSEL
 function setupCarousel(){ 
 const carousel = document.getElementsByClassName('carousel')[0]
 carousel.style.position= 'relative'
-carousel.style.width= '300px'
-carousel.style.height= '200px'
+carousel.style.width= MAX_WIDTH+'px'
+carousel.style.height= MAX_HEIGHT+'px'
 carousel.style.margin= '10% auto'
 carousel.style.border= '3px solid black'
 carousel.style.overflow= 'hidden'
 
 //style the images container 
 const images = document.getElementsByClassName('images')[0]
-images.style.width= '900px'
+imgTags = document.getElementsByTagName('img').length
+images.style.width= (imgTags * MAX_WIDTH) + 'px'
 images.style.position= 'relative'
-images.style.height= '200px'
+images.style.height= MAX_HEIGHT+'px'
 
 //make all the images uniform
 const imageList = document.getElementsByTagName('img')
 
 for(let i = 0; i<imageList.length; i++){
-    imageList[i].style.width= '300px'
+    imageList[i].style.width= MAX_WIDTH+'px'
     imageList[i].style.float= 'left'
-    imageList[i].style.height= '200px' 
+    imageList[i].style.height= MAX_HEIGHT+'px'
 }
 
 
@@ -57,32 +62,31 @@ for(let i = 0; i<imageList.length; i++){
     nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>'
     nextBtn.onclick = function(){    
         let currentLeft = 0
-        console.log(currentImg);
+        //console.log(currentImg);
     
     
-        if(currentImg === 2){ 
+        if(currentImg === imgTags-1){ 
          
-            currentLeft = +(images.style.left.split('px').join('')) 
+            currentLeft = -(imgTags-1)*MAX_WIDTH 
             resetInterval = setInterval(()=>{
-                 
-                images.style.left = `${currentLeft++}px`;
+                currentLeft = currentLeft + STEP
+                images.style.left = `${currentLeft}px`;
     
-                if(currentLeft === 0){  
+                if(currentLeft >= 0){  
                     currentImg = 0
-                    clearInterval(resetInterval)
-
+                    clearInterval(resetInterval) 
                     changeActiveDot(currentImg)
                 } 
             },2)
         } 
         else{
             interval = setInterval(()=>{ 
-                images.style.left = `-${(currentImg)*300+currentLeft++}px`;
-                if(currentLeft >= 300){
-                      
-                    currentImg = (currentImg+1) % 3 
-                    clearInterval(interval)
+                currentLeft = currentLeft + STEP
+                images.style.left = `-${(currentImg) * MAX_WIDTH + currentLeft}px`
 
+                if(currentLeft >= MAX_WIDTH){ 
+                    currentImg = (currentImg+1) % imgTags
+                    clearInterval(interval) 
                     changeActiveDot(currentImg)
                 } 
             },1)
@@ -107,68 +111,65 @@ for(let i = 0; i<imageList.length; i++){
 
     previousBtn.innerHTML = '<i class="fas fa-chevron-left"></i>'
     previousBtn.onclick = function(){    
-        let currentLeft = 0
-
-        // document.getElementsByClassName('dot')
-
-        console.log(currentImg);
-    
+        let currentLeft = 0 
     
         if(currentImg === 0){ 
          
             resetInterval = setInterval(()=>{
-                 
-                images.style.left = `${currentLeft--}px`;
+                currentLeft = currentLeft - STEP
+                images.style.left = `${currentLeft}px`;
     
-                if(currentLeft <= -600){  
-                    currentImg = 2
+                if(currentLeft <= -(imgTags - 1)*MAX_WIDTH){  
+                    currentImg = imgTags-1
                     currentLeft = 0
                     clearInterval(resetInterval)
 
                     changeActiveDot(currentImg)
                 } 
-            },2)
+            },5)
         } 
         else{    
             currentLeft = +(images.style.left.split('px').join('')) 
             let dx = 0
 
             interval = setInterval(()=>{  
-                images.style.left = `${currentLeft + dx++}px`;
+                dx = dx + STEP
+                images.style.left = `${currentLeft + dx}px`;
                 
-                if(dx == 300){
+                if(dx == MAX_WIDTH){
                       
-                    currentImg = (currentImg-1) % 3  
+                    currentImg = (currentImg-1) % imgTags 
                     clearInterval(interval)
 
                     changeActiveDot(currentImg)
                 } 
-            },1)
+            },5)
         }
     }  
     carousel.appendChild(previousBtn) 
 
     //setup dots
-    const numberOfImages = images.getElementsByTagName('img').length
-    for(index = 0; index < numberOfImages; index++){
-        const dot = document.createElement('i')
-        dot.setAttribute('class','dot fas fa-circle')
-        dot.setAttribute('id',index)
-        dot.setAttribute('onclick',`switchto(${index})`)
-        dot.style.margin = '0 1%'
-        dot.style.color = 'lightgray'
-        dot.style.cursor = 'pointer'
-        dots.appendChild(dot)
-    }  
-
+    const numberOfImages = imgTags
+    if(numberOfImages <= 5){
+        for(index = 0; index < numberOfImages; index++){
+            const dot = document.createElement('i')
+            dot.setAttribute('class','dot fas fa-circle')
+            dot.setAttribute('id',index)
+            dot.setAttribute('onclick',`switchto(${index})`)
+            dot.style.margin = '0 1%'
+            dot.style.color = 'lightgray'
+            dot.style.cursor = 'pointer'
+            dots.appendChild(dot)
+        }      
+        
     document.getElementsByClassName('dot')[currentImg].style.color = 'white'
     document.getElementsByClassName('dot')[currentImg].style.transform = 'scale(1.2)'
+    } 
 }  
 
 function switchto(slideIndex){
     const images = document.getElementsByClassName('images')[0]
-    images.style.left = -(slideIndex * 300) + 'px'
-    console.log('dot',slideIndex);
+    images.style.left = -(slideIndex * MAX_WIDTH) + 'px' 
     currentImg = slideIndex
 
     changeActiveDot(currentImg)
@@ -176,11 +177,7 @@ function switchto(slideIndex){
 
 function changeActiveDot(dotIndex){
     const allDots = document.getElementsByClassName('dot')
-    
-    // allDots.forEach(dot =>{
-    //     dot.style.color = 'lightgray'
-    //     dot.style.transform = 'scale(1)'
-    // })
+     
     for(let i = 0; i < allDots.length; i++){ 
         allDots[i].style.color = 'lightgray'
         allDots[i].style.transform = 'scale(1)'
