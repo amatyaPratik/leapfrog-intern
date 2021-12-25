@@ -6,6 +6,7 @@ const STEP = 4
 
 let imgTags
 let interval
+let lockButtons // initially 'undefined'
 
 //SETUP the CAROUSEL
 function setupCarousel(){ 
@@ -60,37 +61,43 @@ for(let i = 0; i<imageList.length; i++){
     
 
     nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>'
-    nextBtn.onclick = function(){    
-        let currentLeft = 0
-        //console.log(currentImg);
-    
-    
-        if(currentImg === imgTags-1){ 
+    nextBtn.onclick = function(){  
+        
+        if(lockButtons === undefined || lockButtons === false){
+            lockButtons = true
+            let currentLeft = 0
+            //console.log(currentImg);
          
-            currentLeft = -(imgTags-1)*MAX_WIDTH 
-            resetInterval = setInterval(()=>{
-                currentLeft = currentLeft + STEP
-                images.style.left = `${currentLeft}px`;
-    
-                if(currentLeft >= 0){  
-                    currentImg = 0
-                    clearInterval(resetInterval) 
-                    changeActiveDot(currentImg)
-                } 
-            },2)
-        } 
-        else{
-            interval = setInterval(()=>{ 
-                currentLeft = currentLeft + STEP
-                images.style.left = `-${(currentImg) * MAX_WIDTH + currentLeft}px`
+            if(currentImg === imgTags-1){ 
+            
+                currentLeft = -(imgTags-1)*MAX_WIDTH 
+                resetInterval = setInterval(()=>{
+                    currentLeft = currentLeft + STEP
+                    images.style.left = `${currentLeft}px` 
+        
+                    if(currentLeft >= 0){  
+                        currentImg = 0
+                        clearInterval(resetInterval) 
+                        changeActiveDot(currentImg)
+                        lockButtons = false
+                    } 
+                },2)
+            } 
+            else{
+                interval = setInterval(()=>{ 
+                    currentLeft = currentLeft + STEP
+                    images.style.left = `-${(currentImg) * MAX_WIDTH + currentLeft}px`
 
-                if(currentLeft >= MAX_WIDTH){ 
-                    currentImg = (currentImg+1) % imgTags
-                    clearInterval(interval) 
-                    changeActiveDot(currentImg)
-                } 
-            },1)
+                    if(currentLeft >= MAX_WIDTH){ 
+                        currentImg = (currentImg+1) % imgTags
+                        clearInterval(interval) 
+                        changeActiveDot(currentImg)
+                        lockButtons = false
+                    } 
+                },1)
+            }
         }
+      
     } 
     carousel.appendChild(nextBtn)
 
@@ -110,40 +117,43 @@ for(let i = 0; i<imageList.length; i++){
     previousBtn.classList.add('next')
 
     previousBtn.innerHTML = '<i class="fas fa-chevron-left"></i>'
-    previousBtn.onclick = function(){    
-        let currentLeft = 0 
+    previousBtn.onclick = function(){  
+        if(lockButtons === undefined || lockButtons === false){
+            lockButtons = true          
+            let currentLeft = 0 
+        
+            if(currentImg === 0){ 
+             
+                resetInterval = setInterval(()=>{
+                    currentLeft = currentLeft - STEP
+                    images.style.left = `${currentLeft}px`;
+        
+                    if(currentLeft <= -(imgTags - 1)*MAX_WIDTH){  
+                        currentImg = imgTags-1
+                        currentLeft = 0
+                        clearInterval(resetInterval) 
+                        changeActiveDot(currentImg)
+                        lockButtons = false   
+                    } 
+                },5)
+            } 
+            else{    
+                currentLeft = +(images.style.left.split('px').join('')) 
+                let dx = 0
     
-        if(currentImg === 0){ 
-         
-            resetInterval = setInterval(()=>{
-                currentLeft = currentLeft - STEP
-                images.style.left = `${currentLeft}px`;
-    
-                if(currentLeft <= -(imgTags - 1)*MAX_WIDTH){  
-                    currentImg = imgTags-1
-                    currentLeft = 0
-                    clearInterval(resetInterval)
-
-                    changeActiveDot(currentImg)
-                } 
-            },5)
-        } 
-        else{    
-            currentLeft = +(images.style.left.split('px').join('')) 
-            let dx = 0
-
-            interval = setInterval(()=>{  
-                dx = dx + STEP
-                images.style.left = `${currentLeft + dx}px`;
-                
-                if(dx == MAX_WIDTH){
-                      
-                    currentImg = (currentImg-1) % imgTags 
-                    clearInterval(interval)
-
-                    changeActiveDot(currentImg)
-                } 
-            },5)
+                interval = setInterval(()=>{  
+                    dx = dx + STEP
+                    images.style.left = `${currentLeft + dx}px`;
+                    
+                    if(dx == MAX_WIDTH){
+                          
+                        currentImg = (currentImg-1) % imgTags 
+                        clearInterval(interval) 
+                        changeActiveDot(currentImg)
+                        lockButtons = false  
+                    } 
+                },5)
+            }
         }
     }  
     carousel.appendChild(previousBtn) 
