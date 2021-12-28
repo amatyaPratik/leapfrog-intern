@@ -1,180 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <title>Pratik | Assignments - LF</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Leapfrog Assignments</h1>
-    <div id="myinfo"> 
-        <p id="name" style="font-size: 23px;">Pratik Amatya</p>
-        <p id="batch">Batch: 40th</p>
-        <p id="group">Group: D</p>
-        <p id="rn">Roll: 14</p>
-        <i class="fas fa-chevron-down"></i>
+    <div id="myinfo">
+      <p id="name" style="font-size: 23px">Pratik Amatya</p>
+      <p id="batch">Batch: 40th</p>
+      <p id="group">Group: D</p>
+      <p id="rn">Roll: 14</p>
+      <i class="fas fa-chevron-down"></i>
     </div>
 
-    <div class="container">    
+    <div class="container">
+      <div id="assignments-table">
+        <table>
+          <tr>
+            <th id="sn">SN</th>
+            <th id="title">Title</th>
+            <th id="col-desc">Desc</th>
+            <th id="to-code">Source code</th>
+            <th id="to-demo">Live Demo</th>
+            <th id="topic">Topic</th>
+          </tr>
 
-        <div id="assignments-table"> 
-            <table>
-                <tr>
-                    <th id="sn">SN</th>
-                    <th id="title">Title</th>
-                    <th id="col-desc">Desc</th>
-                    <th id="to-code">Source code</th>
-                    <th id="to-demo">Live Demo</th>
-                    <th id="topic">Topic</th>
-                    
-                </tr>
-             
-                <tr>
-                    <td>1</td>
-                    <td>Git & GitHub</td>
-                    <td>Create a simple html page and host it via 'Github Pages'</td>
-                    <td><a href="https://github.com/DaemonOfHell/web-dev/tree/main">Github</a></td>
-                    <td><a href='#' class="tooltip" style="color: darkgray; cursor:not-allowed; text-decoration: none;">
-                        Demo
-                        <span class="tooltiptext">
-                            You are currently viewing the Git Hub assignment 1 ;)
-                        </span>
-                        </a>
-                    </td>
-                    <td  class="tooltip">
-                        <i class="fab fa-github"></i>
-                        <span class="tooltiptext">
-                            GitHub
-                        </span>
-                    </td>
-                </tr>
+          <tr>
+            <td>1</td>
+            <td>Git & GitHub</td>
+            <td>Create a simple html page and host it via 'Github Pages'</td>
+            <td>
+              <a href="https://github.com/DaemonOfHell/web-dev/tree/main"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="#"
+                class="tooltip"
+                style="
+                  color: darkgray;
+                  cursor: not-allowed;
+                  text-decoration: none;
+                "
+              >
+                Demo
+                <span class="tooltiptext">
+                  You are currently viewing the Git Hub assignment 1 ;)
+                </span>
+              </a>
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-github"></i>
+              <span class="tooltiptext"> GitHub </span>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>2</td>
-                    <td>Design Assignment <br>(Tu-Tangle LoFi)</td>
-                    <td>Sketch a LoFi for the given Tu-Tangle website sample.</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design">Github</a></td>
-                    <td><a href='https://raw.githubusercontent.com/DaemonOfHell/leapfrog-intern/main/design/lofi%232-tutangle.png'>Demo</a></td>
-                    <td  class="tooltip">
-                        <i class="fab fa-figma"></i>
-                        <span class="tooltiptext">
-                            Design
-                        </span>
-                    </td>
-                </tr>
+          <tr>
+            <td>2</td>
+            <td>Design Assignment <br />(Tu-Tangle LoFi)</td>
+            <td>Sketch a LoFi for the given Tu-Tangle website sample.</td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://raw.githubusercontent.com/DaemonOfHell/leapfrog-intern/main/design/lofi%232-tutangle.png"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-figma"></i>
+              <span class="tooltiptext"> Design </span>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>3</td>
-                    <td>Design Implementation in CSS2<br>(Tu-Tangle Home-Page LoFi)</td>
-                    <td>Implement the given Tu-Tangle hompage sample in CSS2.</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design/Tu-Tangle-HTML4-CSS2">Github</a></td>
-                    <td><a href='https://daemonofhell.github.io/leapfrog-intern/design/Tu-Tangle-HTML4-CSS2/index.html'>Demo</a></td>
-                    <td  class="tooltip">
-                        <i class="fab fa-figma"></i><i class="fab fa-css3-alt"></i>
-                        <span class="tooltiptext">
-                            Design & Implementation
-                        </span>
-                    </td>
-                </tr>
+          <tr>
+            <td>3</td>
+            <td>
+              Design Implementation in CSS2<br />(Tu-Tangle Home-Page LoFi)
+            </td>
+            <td>Implement the given Tu-Tangle hompage sample in CSS2.</td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design/Tu-Tangle-HTML4-CSS2"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/design/Tu-Tangle-HTML4-CSS2/index.html"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-figma"></i><i class="fab fa-css3-alt"></i>
+              <span class="tooltiptext"> Design & Implementation </span>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>4</td>
-                    <td>Responsive Design Implementation<br>(Tu-Tangle Home-Page LoFi)</td>
-                    <td>Make the previous Tu-Tangle hompage responsive with @media-query</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design/Tu-Tangle-HTML4-CSS2%20-%20Responsive">Github</a></td>
-                    <td><a href='https://daemonofhell.github.io/leapfrog-intern/design/Tu-Tangle-HTML4-CSS2%20-%20Responsive/index.html'>Demo</a></td>
-                    <td  class="tooltip">
-                        <i class="fab fa-css3-alt"></i>
-                        <span class="tooltiptext">
-                            Design & Implementation
-                        </span>
-                    </td>
-                </tr>
+          <tr>
+            <td>4</td>
+            <td>
+              Responsive Design Implementation<br />(Tu-Tangle Home-Page LoFi)
+            </td>
+            <td>
+              Make the previous Tu-Tangle hompage responsive with @media-query
+            </td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design/Tu-Tangle-HTML4-CSS2%20-%20Responsive"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/design/Tu-Tangle-HTML4-CSS2%20-%20Responsive/index.html"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-css3-alt"></i>
+              <span class="tooltiptext"> Design & Implementation </span>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>5</td>
-                    <td>Responsive Design Implementation<br>(Peyme - final design assignment)</td>
-                    <td>Make a responsive web page for the given Figma design</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design/3. Peyme - mobile first responsive design">Github</a></td>
-                    <td><a href='https://daemonofhell.github.io/leapfrog-intern/design/3.%20Peyme%20-%20mobile%20first%20responsive%20design/index.html#'>Demo</a></td>
-                    <td class="tooltip">
-                        <i class="fab fa-css3-alt"></i> 
-                    </td>
-                </tr>
+          <tr>
+            <td>5</td>
+            <td>
+              Responsive Design Implementation<br />(Peyme - final design
+              assignment)
+            </td>
+            <td>Make a responsive web page for the given Figma design</td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/design/3. Peyme - mobile first responsive design"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/design/3.%20Peyme%20-%20mobile%20first%20responsive%20design/index.html#"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-css3-alt"></i>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>6</td>
-                    <td>Exercises (2-7) <br>(JS Basics)</td>
-                    <td>Write js codes to achieve the specified outputs</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/Exercises(2-7)">Github</a></td>
-                    <td><a href='#' style="color: darkgray; cursor:not-allowed; text-decoration: none;"> Demo </a> </td>
-                    <td class="tooltip">
-                        <i class="fab fa-js"></i>
-                    </td>
-                </tr>
- 
-                <tr>
-                    <td>7</td>
-                    <td>Exercise-8</td>
-                    <td>Render a scatter plot based on an array of coordinates. Create the container for the plot and create each point using javascript.</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/Exercise8">Github</a></td>
-                    <td><a href='https://daemonofhell.github.io/leapfrog-intern/js/Exercise8/index.html'>Demo</a></td>
-                    <td class="tooltip">
-                        <i class="fab fa-js"></i>
-                    </td>
-                </tr>
+          <tr>
+            <td>6</td>
+            <td>Exercises (2-7) <br />(JS Basics)</td>
+            <td>Write js codes to achieve the specified outputs</td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/Exercises(2-7)"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="#"
+                style="
+                  color: darkgray;
+                  cursor: not-allowed;
+                  text-decoration: none;
+                "
+              >
+                Demo
+              </a>
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-js"></i>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>8</td>
-                    <td>Exercise-9</td>
-                    <td>Render a circle that moves vertically and bounces back into another direction.</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/Exercise9">Github</a></td>
-                    <td><a href='https://daemonofhell.github.io/leapfrog-intern/js/Exercise9/index.html'>Demo</a></td>
-                    <td class="tooltip">
-                        <i class="fab fa-js"></i>
-                    </td>
-                </tr>
+          <tr>
+            <td>7</td>
+            <td>Exercise-8</td>
+            <td>
+              Render a scatter plot based on an array of coordinates. Create the
+              container for the plot and create each point using javascript.
+            </td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/Exercise8"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/js/Exercise8/index.html"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-js"></i>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>9</td>
-                    <td>Basic Carousel</td>
-                    <td>Write a program to generate a basic image carousel.</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/BasicCarousel">Github</a></td>
-                    <td><a href='https://daemonofhell.github.io/leapfrog-intern/js/BasicCarousel/index.html'>Demo</a></td>
-                    <td class="tooltip">
-                        <i class="fab fa-js"></i>
-                    </td>
-                </tr>
+          <tr>
+            <td>8</td>
+            <td>Exercise-9</td>
+            <td>
+              Render a circle that moves vertically and bounces back into
+              another direction.
+            </td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/Exercise9"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/js/Exercise9/index.html"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-js"></i>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>10</td>
-                    <td>Responsive Carousel</td>
-                    <td>Add timing (hold, transition, hover) effects to above's carousel.</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/ResponsiveCarousel">Github</a></td>
-                    <td><a href='https://daemonofhell.github.io/leapfrog-intern/js/ResponsiveCarousel/index.html'>Demo</a></td>
-                    <td class="tooltip">
-                        <i class="fab fa-js"></i>
-                    </td>
-                </tr>
+          <tr>
+            <td>9</td>
+            <td>Basic Carousel</td>
+            <td>Write a program to generate a basic image carousel.</td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/BasicCarousel"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/js/BasicCarousel/index.html"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-js"></i>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>11</td>
-                    <td>Ball Collision</td>
-                    <td>Simulate Ball Collision. Expreiment for different number of balls.</td>
-                    <td><a href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/BallCollision">Github</a></td>
-                    <td><a href='https://daemonofhell.github.io/leapfrog-intern/js/BallCollision/index.html'>Demo</a></td>
-                    <td class="tooltip">
-                        <i class="fab fa-js"></i>
-                    </td>
-                </tr>
+          <tr>
+            <td>10</td>
+            <td>Responsive Carousel</td>
+            <td>
+              Add timing (hold, transition, hover) effects to above's carousel.
+            </td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/ResponsiveCarousel"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/js/ResponsiveCarousel/index.html"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-js"></i>
+            </td>
+          </tr>
 
+          <tr>
+            <td>11</td>
+            <td>Ball Collision</td>
+            <td>
+              Simulate Ball Collision. Expreiment for different number of balls.
+            </td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/BallCollision"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/js/BallCollision/index.html"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-js"></i>
+            </td>
+          </tr>
 
-            </table>
-        </div>
+          <tr>
+            <td>12</td>
+            <td>2D Car Game</td>
+            <td>Make a 2D car Lane game with necessary features</td>
+            <td>
+              <a
+                href="https://github.com/DaemonOfHell/leapfrog-intern/tree/main/js/domRider"
+                >Github</a
+              >
+            </td>
+            <td>
+              <a
+                href="https://daemonofhell.github.io/leapfrog-intern/js/domRider/index.html"
+                >Demo</a
+              >
+            </td>
+            <td class="tooltip">
+              <i class="fab fa-js"></i>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-</body>
-</html> 
+  </body>
+</html>
