@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #002;
+  position: relative;
+  overflow: hidden;
+}
+
+body #tips {
+  line-height: 20px;
+  position: fixed;
+  left: 2%;
+  width: 15%;
+  color: white;
+}
+
+body #tips h2 {
+  text-align: left;
+  padding: 10px 0;
+}
+
+body .game {
+  position: relative;
+  width: 500px;
+  height: 600px;
+  background-color: darkgray;
+  border: 2px solid black;
+  margin: 0 auto;
+}
+.game .ammo {
+  position: absolute;
+  display: none;
+  left: -100px;
+  top: 20px;
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-image: url("../res/sprites/ammo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+img#fire {
+  position: absolute;
+  width: 50px;
+  height: 270px;
+  top: -270px;
+}
+.game .scoreboard {
+  position: absolute;
+  left: 0;
+  /* background-color: #fff; */
+  border: 2px solid white;
+  color: white;
+  /* width: 120px; */
+  /* height: 30px; */
+}
+
+.game .scoreboard h1.score {
+  padding-left: 20px;
+  /* display: inline-block; */
+}
+
+.game .lane-left {
+  padding: 0 10%;
+  /* position: absolute; */
+  display: inline-block;
+  margin: 0;
+  width: 32%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: #1e1e1e;
+  left: 0;
+}
+.game .lane-center {
+  padding: 0 10%;
+  /* position: absolute; */
+  display: inline-block;
+  margin: 0;
+  width: 33%;
+  height: 100%;
+  border: 1px solid black;
+  margin: 0 auto;
+  background-color: #1e1e1e;
+}
+.game .lane-right {
+  padding: 0 10%;
+  /* position: absolute; */
+  display: inline-block;
+  margin: 0;
+  width: 33%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: #1e1e1e;
+  right: 0;
+}
+
+.left {
+  position: absolute;
+  /* top: 20%; */
+  left: 10%;
+  width: 30px;
+  /* margin: 0 auto; */
+}
+
+.car {
+  /* top: 10px; */
+  /* width: 54px;
+  height: 130px; */
+  position: absolute;
+  /* background-color: #fff; */
+  /* border: 1px solid red; */
+  background-image: url("../res/sprites/car.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.obstacle {
+  position: absolute;
+  background-image: url("../res/sprites/car-red.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#pauseplay {
+  visibility: hidden;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  vertical-align: middle;
+  display: table-cell;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 23;
+  /* border: 2px solid wheat; */
+  padding: 50vh 50vw 50vh 50vw;
+  /* text-align: center; */
+  padding: 0;
+  margin: 0;
+}
+#pauseplay i {
+  position: absolute;
+  display: block;
+  font-size: 30vh;
+  color: aliceblue;
+  /* border: 1px solid greenyellow; */
+  line-height: 100vh;
+  padding-left: 40%;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  /* border: 2px solid pink; */
+}
+
+#pauseplay p {
+  color: white;
+  width: 100vw;
+  position: absolute;
+  line-height: 10vh;
+  margin-top: 30%;
+  /* border: 2px solid peru; */
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+#gameoverscreen {
+  visibility: hidden;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 24;
+  /* border: 2px solid white; */
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+#gameoverscreen .highscorediv {
+  position: fixed;
+  right: 5%;
+  top: 40%;
+  border: 1px solid white;
+}
+#gameoverscreen .highscorediv h2,
+#gameoverscreen .highscorediv ol {
+  color: white;
+}
+#gameoverscreen #scorediv {
+  vertical-align: middle;
+  display: table-cell;
+  width: 100vw;
+  height: 70vh;
+  color: coral;
+  /* border: 2px solid lawngreen; */
+  line-height: 0;
+}
+#gameoverscreen #scorediv h1 {
+  font-size: 10rem;
+  /* padding-bottom: 60px; */
+  margin-top: 150px;
+  /* margin-bottom: 20px; */
+}
+#gameoverscreen #scorediv p {
+  font-size: 3rem;
+  margin-top: 90px;
+}
+#gameoverscreen #replaydiv {
+  /* vertical-align: middle; */
+  /* display: table-row; */
+  width: 100vw;
+  height: 30vh;
+  /* border: 2px solid lawngreen; */
+  color: #551a8b;
+  line-height: 0;
+}
+#gameoverscreen #replaydiv span {
+  font-size: 3rem;
+}
+#gameoverscreen #replaydiv p {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-top: 30px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <script src="./js/car.js"></script>
+    <script src="./js/obstacle.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/utils.js"></script>
+
+    <title>2DRider</title>
+  </head>
+  <body>
+    <div id="tips">
+      <h2>Controls</h2>
+      <ol>
+        <li>F : fire</li>
+        <li>move: left, right</li>
+        <li>spacebar: pause, resume, start</li>
+      </ol>
+    </div>
+    <div id="gameoverscreen" class="noselect">
+      <div class="highscorediv">
+        <h2>High Scores</h2>
+        <ol>
+          <li>-</li>
+          <li>-</li>
+          <li>-</li>
+        </ol>
+      </div>
+      <div id="scorediv">
+        <h1 id="finalscore">0</h1>
+        <p>Score:</p>
+      </div>
+      <!-- <p id="gameovertext">Game Over</p> -->
+      <div id="replaydiv">
+        <span
+          ><a href="/"><i class="fas fa-undo"></i></a
+        ></span>
+        <p>Replay</p>
+      </div>
+    </div>
+    <div class="game">
+      <div class="ammo"></div>
+      <div class="scoreboard">
+        <span>Score:</span>
+        <h1 class="score">0</h1>
+      </div>
+      <div class="lane-left"></div>
+      <div class="lane-center"></div>
+      <div class="lane-right"></div>
+    </div>
+
+    <div id="pauseplay" onclick="pauseplay()" class="noselect">
+      <i class="fas fa-play"></i>
+      <p>Click / spacebar to continue..</p>
+    </div>
+
+    <div id="introscreen" onclick="pauseplay()" class="noselect">
+      <i class="fas fa-play"></i>
+      <p>Click to start / press spacebar</p>
+    </div>
+  </body>
+</html>
