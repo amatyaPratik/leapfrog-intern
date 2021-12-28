@@ -141,6 +141,10 @@ img#fire {
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 23;
   /* border: 2px solid wheat; */
+  background-image: url("../res/sprites/bg-logo1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 50vh 50vw 50vh 50vw;
   /* text-align: center; */
   padding: 0;
