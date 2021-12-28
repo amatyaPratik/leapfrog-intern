@@ -4,7 +4,7 @@
     const minY  = 0
     const maxX = 1300
     const maxY = 600
-    const ballCount = 20
+    const ballCount = 24
 
     //holds wall boundaries
     let walls
@@ -62,7 +62,7 @@ var container = {
         document.body.insertBefore(this.box, document.body.childNodes[0]);
     },
     start : function() {        
-        this.interval = setInterval(updateGameArea, 100);       
+        this.interval = setInterval(updateGameArea, 90);       
     },
     stop : function() {
         clearInterval(this.interval);
@@ -83,10 +83,10 @@ function ball(radius = 55, x, y, color) {
     this.mass = radius **3  // assume radius^2 is equivalent to mass. because it is proportional
     // this.speed = 0;
     // this.angle = undefined;    
-    // this.dx = (Math.random() > 0.5) ? 1*Math.random()*1: -Math.random()*1
-    // this.dy = (Math.random() > 0.5) ? 1*Math.random()*1: -Math.random()*1
-    this.dx = (Math.random() > 0.5) ? 1: -1
-    this.dy = (Math.random() > 0.5) ? 1: -1
+    this.dx = (Math.random() > 0.5) ? 1*Math.random()*5: -Math.random()*5
+    this.dy = (Math.random() > 0.5) ? 1*Math.random()*5: -Math.random()*5
+    // this.dx = (Math.random() > 0.5) ? 1: -1
+    // this.dy = (Math.random() > 0.5) ? 1: -1
     this.color = color
     this.ballHandle = document.createElement('div') 
     this.speed = () =>{
@@ -96,8 +96,7 @@ function ball(radius = 55, x, y, color) {
         return Math.atan(this.dy, this.dx)
     }
 
-    this.initBall = function(){
-        // ballHandle = document.createElement('div')
+    this.initBall = function(){ 
         this.ballHandle.style.position = 'absolute'
         this.ballHandle.style.borderRadius = '50%'
         this.ballHandle.style.width = (2*this.radius) + 'px'
@@ -208,4 +207,4 @@ updateGameArea = () =>{
     
 }
  
-console.log(balls);
+// console.log(balls);
