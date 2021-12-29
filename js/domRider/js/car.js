@@ -17,7 +17,7 @@ class Car {
 
     this.ammo = document.createElement("img");
     this.ammo.setAttribute("id", "fire");
-    this.ammo.setAttribute("src", "../res/sprites/fire.gif");
+    this.ammo.setAttribute("src", "./res/sprites/fire.gif");
     this.ammo.style.display = "none";
     this.handle.appendChild(this.ammo);
 
