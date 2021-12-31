@@ -1,5 +1,5 @@
 const lanes = ["lane-left", "lane-center", "lane-right"];
-const skins = ["../res/sprites/car-red.png", "../res/sprites/car-green.png"];
+const skins = ["./res/sprites/car-red.png", "./res/sprites/car-green.png"];
 
 class Obstacle {
   constructor(lane, y) {
