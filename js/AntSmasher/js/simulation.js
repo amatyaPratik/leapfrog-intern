@@ -183,8 +183,7 @@ addStain = (target) => {
 /** event listener for user's smash */
 document.addEventListener("mousedown", (e) => {
   if (e.target.classList[0] === "ant") {
-    const antDomIndex = e.target.getAttribute("antIndex");
-    console.log(antDomIndex);
+    const antDomIndex = e.target.getAttribute("antIndex"); 
 
     new Audio("./res/sounds/swat.mp3").play();
 
