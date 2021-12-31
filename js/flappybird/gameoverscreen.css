@@ -103,13 +103,13 @@
   border: 3px solid black;
 }
 #game .menu .playbtn {
-  background-image: url("../res/icons/play.png");
+  background-image: url("./res/icons/play.png");
   left: 0px;
   background-size: 50%;
 }
 
 #game .menu .exitbtn {
-  background-image: url("../res/icons/exit.png");
+  background-image: url("./res/icons/exit.png");
   margin-left: 50%;
   transform: translateX(-50%);
   background-size: 45%;
@@ -117,6 +117,6 @@
 
 #game .menu .highscoresbtn {
   right: 0;
-  background-image: url("../res/icons/highscores.png");
+  background-image: url("./res/icons/highscores.png");
   background-size: 80%;
 }
