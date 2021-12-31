@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  cursor: grab;
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+  background-color: dimgray;
+}
+body #box {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.ant {
+  background-image: url("../AntSmasher/res/images/ant2.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  z-index: 20;
+}
+
+.ant:hover {
+  cursor: grabbing;
+}
+
+.stain {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
