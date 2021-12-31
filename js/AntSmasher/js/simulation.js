@@ -8,9 +8,9 @@ let REFRESH_RATE = 20;
 let walls;
 
 let stainPatterns = [
-  'url("../res/images/stain1.png")',
-  'url("../res/images/stain2.png")',
-  'url("../res/images/stain3.png")',
+  'url("./res/images/stain1.png")',
+  'url("./res/images/stain2.png")',
+  'url("./res/images/stain3.png")',
 ];
 
 /** array to hold all the current ant objects */
