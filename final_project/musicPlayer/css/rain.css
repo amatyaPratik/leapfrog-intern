@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+.rain {
+  z-index: -1;
+  /* border: 2px solid firebrick; */
+  /* background-color: #fff; */
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../res/rain.png");
+  animation: rain 0.4s linear infinite;
+  filter: blur(1px) contrast(30);
+  -webkit-filter: blur(1px) contrast(30);
+  animation-timing-function: cubic-bezier(0.9785, 8.135, 5.15, 0.86);
+}
+
+.rain::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  animation: lightning 0.3s linear infinite;
+  opacity: 0;
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 20% 100%;
+  }
+}
+
+@keyframes lightning {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  11% {
+    opacity: 0;
+  }
+  14% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  21% {
+    opacity: 0;
+  }
+  24% {
+    opacity: 0;
+  }
+  104% {
+    opacity: 0;
+  }
+}
