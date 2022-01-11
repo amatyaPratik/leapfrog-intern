@@ -8,9 +8,9 @@ let REFRESH_RATE = 20;
 let walls;
 
 let stainPatterns = [
-  'url("../res/images/stain1.png")',
-  'url("../res/images/stain2.png")',
-  'url("../res/images/stain3.png")',
+  'url("./res/images/stain1.png")',
+  'url("./res/images/stain2.png")',
+  'url("./res/images/stain3.png")',
 ];
 
 /** array to hold all the current ant objects */
@@ -183,8 +183,7 @@ addStain = (target) => {
 /** event listener for user's smash */
 document.addEventListener("mousedown", (e) => {
   if (e.target.classList[0] === "ant") {
-    const antDomIndex = e.target.getAttribute("antIndex");
-    console.log(antDomIndex);
+    const antDomIndex = e.target.getAttribute("antIndex"); 
 
     new Audio("./res/sounds/swat.mp3").play();
 
