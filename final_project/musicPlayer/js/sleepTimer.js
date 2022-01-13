@@ -22,7 +22,7 @@ function startTimer(time) {
       timeLeft.style.height = "0px";
       displayHint("Good Night !");
       shutdownAllFeatures();
-      btnImage.src = "../res/images/icons/snoozed-robot.png";
+      btnImage.src = "./res/images/icons/snoozed-robot.png";
       clearInterval(sleepTimer);
     }
   }, callInterval);
@@ -52,7 +52,7 @@ function shutdownAllFeatures() {
 function resetTimer() {
   clearTimeout(confirmationTimeout);
   clearInterval(sleepTimer);
-  btnImage.src = "../res/images/icons/zzz.png";
+  btnImage.src = "./res/images/icons/zzz.png";
   duration.style.right = "1rem";
   timeLeft.style.height = "100%";
 }
@@ -67,7 +67,7 @@ sleepBtn.addEventListener("click", (sleepInit) => {
   confirmationTimeout = setTimeout(() => {
     confirmed = true;
     if (confirmed && timers[chosenDuration]) {
-      btnImage.src = "../res/images/icons/sleeping.png";
+      btnImage.src = "./res/images/icons/sleeping.png";
       duration.style.right = "-400px";
       startTimer(timers[chosenDuration]);
       displayHint(`sleeping after ${timers[chosenDuration]} minutes`);
