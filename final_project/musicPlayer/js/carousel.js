@@ -1,12 +1,12 @@
 let currentImage = 0;
 const images = [
-  "../user/user1.jpg",
-  "../user/user2.jpg",
-  "../user/user3.jpg",
-  "../user/user4.jpg",
-  "../user/user5.jpg",
-  "../user/user6.jpeg",
-  "../user/user1.jpg",
+  "./user/user1.jpg",
+  "./user/user2.jpg",
+  "./user/user3.jpg",
+  "./user/user4.jpg",
+  "./user/user5.jpg",
+  "./user/user6.jpeg",
+  "./user/user1.jpg",
 ];
 
 let dx = 0;
