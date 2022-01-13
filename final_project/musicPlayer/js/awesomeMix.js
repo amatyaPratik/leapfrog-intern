@@ -1,5 +1,5 @@
 function clickCasetteButton() {
-  new Audio("../res/sounds/click6.wav").play();
+  new Audio("./res/sounds/click6.wav").play();
 }
 
 function initAwesomeMixCasettePlayer() {
@@ -57,7 +57,7 @@ function initAwesomeMixCasettePlayer() {
   const wheelLeft = document.createElement("img");
   wheelLeft.classList.add("wheel-left");
   wheelLeft.setAttribute("alt", "wheel-left");
-  wheelLeft.src = "../res/images/sprites/wheel1.png";
+  wheelLeft.src = "./res/images/sprites/wheel1.png";
   wheelLeft.style.height = "220%";
   wheelLeft.style.position = "absolute";
   wheelLeft.style.left = "-20%";
@@ -66,7 +66,7 @@ function initAwesomeMixCasettePlayer() {
   const wheelRight = document.createElement("img");
   wheelRight.classList.add("wheel-right");
   wheelRight.setAttribute("alt", "wheel-right");
-  wheelRight.src = "../res/images/sprites/wheel1.png";
+  wheelRight.src = "./res/images/sprites/wheel1.png";
   wheelRight.style.height = "220%";
   wheelRight.style.position = "absolute";
   wheelRight.style.right = "-20%";
@@ -82,7 +82,7 @@ function initAwesomeMixCasettePlayer() {
   awesomeMixPlayer.style.boxShadow = "4px 8px 7px rgba(34, 20, 18, 0.6)";
   awesomeMixPlayer.style.position = "relative";
   awesomeMixPlayer.style.backgroundImage =
-    "url('../res/images/sprites/awesomeMixBg.png')";
+    "url('./res/images/sprites/awesomeMixBg.png')";
   awesomeMixPlayer.style.backgroundSize = "100%";
   awesomeMixPlayer.style.backgroundPosition = "center";
   awesomeMixPlayer.style.backgroundRepeat = "no-repeat";
