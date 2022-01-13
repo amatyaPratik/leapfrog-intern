@@ -1,3 +1,16 @@
+file.onchange = function () {
+  var files = this.files;
+  audio.src = URL.createObjectURL(files[0]);
+  audio.load();
+  audio.play();
+  file.style.top = "-10vh";
+  songIndex = -1;
+  currentSchemeIndex = 1;
+  currentScheme = changeSchemes[currentSchemeIndex];
+  title.textContent = file.value.split("\\")[2].toUpperCase().split(".")[0];
+  randomPlayMode = true;
+};
+
 var context = new AudioContext();
 var src = context.createMediaElementSource(audio);
 var analyser = context.createAnalyser();
@@ -7,13 +20,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var ctx = canvas.getContext("2d");
 
-// src.connect(analyser);
-// analyser.connect(context.destination);
-
 analyser.fftSize = 256;
 
 var bufferLength = analyser.frequencyBinCount;
-// console.log(bufferLength);
 
 var dataArray = new Uint8Array(bufferLength);
 
@@ -28,15 +37,12 @@ let visualizeFrame;
 function renderFrame() {
   x = 0;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // ctx.fillStyle = "#000";
-  // ctx.fillRect(0, 0, WIDTH, HEIGHT);
   analyser.getByteFrequencyData(dataArray);
   visualizeFrame = requestAnimationFrame(renderFrame);
 
   if (normalVisualizer) {
     drawNormalVisualizer(bufferLength, x, barWidth, barHeight, dataArray);
   } else if (circularVisualizer) {
-    // console.log("cicular");
     drawCircularVisualizer(bufferLength, x, barWidth, barHeight, dataArray);
   }
 }

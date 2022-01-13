@@ -4,7 +4,6 @@ rainAudio.src = "../res/sounds/rain.mp3";
 let splashInterval;
 
 function initRain() {
-  //   if (rainMode) {
   document.body.appendChild(rainAudio);
   rainAudio.play();
   const rainContainer = document.createElement("div");
@@ -47,7 +46,7 @@ function initRain() {
     rainContainer.appendChild(splashImg);
   }
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 2; i++) {
     let splashImg = document.createElement("img");
     splashImg.src = "../res/images/gif/water-drop.gif";
     splashImg.style.width = `${getRandomInt(80, 100)}px`;
@@ -55,14 +54,10 @@ function initRain() {
     splashImg.style.left = `${getRandomInt(1, 100)}%`;
     splashImg.style.position = "absolute";
     splashImg.style.bottom = "-20px";
-    // splashImg.style.top = "0px";
     rainContainer.appendChild(splashImg);
   }
 
-  // rainContainer.style.animation='rain .3s linear infinite'
   document.body.appendChild(rainContainer);
-  //   }
-
   splashInterval = setInterval(splash, 3000);
 }
 
@@ -72,7 +67,6 @@ function endRain() {
   const bodyChildren = document.body.children;
   for (let i = 0; i < bodyChildren.length; i++) {
     if (bodyChildren[i].classList.contains("rain")) {
-      // console.log(bodyChildren[i]);
       document.body.removeChild(bodyChildren[i]);
     }
   }
@@ -85,7 +79,6 @@ function splash() {
       ? "url('../res/images/sprites/rain.png')"
       : "url('./res/images/sprites/rain4.png')";
 }
-// initRain();
 
 rainAudio.addEventListener("ended", () => {
   rainAudio.currentTime = 0;

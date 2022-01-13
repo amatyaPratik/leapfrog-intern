@@ -4,6 +4,7 @@ function initNormalPlayer() {
   prevBtn.classList.remove("casette-mode");
   nextBtn.classList.remove("casette-mode");
   playBackBtn.classList.remove("casette-mode");
+  eqToggleBtn.classList.remove("casette-mode");
   const oldMusicContainerChildNodes = musicContainer.children;
 
   for (let i = 0; i < oldMusicContainerChildNodes.length; i++) {
@@ -17,26 +18,19 @@ function initNormalPlayer() {
     }
   }
 
-  //console.log(navigation);
-
-  musicContainer.style.backgroundColor = "#fff";
+  musicContainer.style.backgroundColor = "burlywood";
   musicContainer.style.backgroundImage =
     "linear-gradient(10deg,rgb(247, 247, 247) 23%,rgb(252, 221, 221) 90%);";
   musicContainer.style.padding = "20px 30px";
-  musicContainer.style.margin = "100px auto";
   musicContainer.style.zIndex = "10";
-  // musicContainer.style.height = "6rem";
-  // musicContainer.style.width = "31rem";
 
   const actionBtn = document.getElementsByClassName("action-btn");
   for (let i = 0; i < actionBtn.length; i++) {
-    //console.log("actionbt");
     actionBtn[i].style.backgroundColor = "transparent";
     actionBtn[i].style.border = "none";
     actionBtn[i].style.color = "teal";
     actionBtn[i].style.fontSize = "20px";
     actionBtn[i].style.padding = "1.2rem 1rem";
-
     actionBtn[i].style.margin = "0 1rem";
     actionBtn[i].style.position = "relative";
   }
@@ -68,7 +62,6 @@ function initNormalPlayer() {
   progressContainer.style.borderRadius = "5px";
   progressContainer.style.cursor = "pointer";
   progressContainer.style.opacity = "0";
-  // progressContainer.style.height = "4px";
   progressContainer.style.width = "90%";
   progressContainer.style.left = "0";
   progressContainer.style.bottom = "0";
@@ -87,18 +80,13 @@ function initNormalPlayer() {
       if (musicContainer.classList.contains("playing")) {
         musicInfoTop.style.opacity = "1";
         musicInfoTop.style.transform = "translateY(-100%)";
-        // musicInfoTop.style.zIndex = "1";
         progressContainer.style.bottom = "-19px";
         progressContainer.style.opacity = "1";
-        // progressContainer.style.zIndex = "0";
       } else {
         musicInfoTop.style.opacity = "0";
         musicInfoTop.style.transform = "translateY(10%)";
-        // musicInfoTop.style.top = "0";
-        // musicInfoTop.style.zIndex = "-1";
         progressContainer.style.bottom = "29px";
         progressContainer.style.opacity = "0";
-        // progressContainer.style.zIndex = "-1";
       }
     }
   });

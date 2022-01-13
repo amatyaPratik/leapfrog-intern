@@ -9,16 +9,18 @@ const images = [
   "../user/user1.jpg",
 ];
 
-// let slideIndex = 0;
 let dx = 0;
 const step = 1.5;
 const carouselWidth = 90;
 const carouselHeight = 90;
+let animationFrame;
 
 function slideLeft() {
+  if (!carouselMode) {
+    return;
+  }
   if (currentImage === images.length - 1) {
     currentImage = 0;
-    // step = -step;
     dx = 0;
     return;
   }
@@ -26,27 +28,20 @@ function slideLeft() {
     currentImage = (currentImage + 1) % images.length;
     document.getElementsByClassName("images")[0].style.left = dx + "vw";
     dx = -currentImage * carouselWidth;
-    // //console.log(currentImage);
     setTimeout(() => {}, 1000);
     return;
   }
 
   dx = dx - step;
-  // //console.log("dx:", dx);
   document.getElementsByClassName("images")[0].style.left = dx + "vw";
-  requestAnimationFrame(slideLeft);
+  animationFrame = window.requestAnimationFrame(slideLeft);
 }
 
 function initCarousel() {
-  // musicContainer.style.position = "fixed";
-  // musicContainer.style.bottom = "0px";
-
   const carousel = document.createElement("div");
   carousel.classList.add("carousel");
 
   carousel.style.position = "fixed";
-  // carousel.style.border = "1px solid pink";
-  // carousel.style.backgroundColor = "transparent";
   carousel.style.width = `${carouselWidth}vw`;
   carousel.style.height = `${carouselHeight}vh`;
   carousel.style.overflow = "hidden";
@@ -68,10 +63,8 @@ function initCarousel() {
     imgWrapper.style.height = carouselHeight + "vh";
     imgWrapper.style.width = carouselWidth + "vw";
     imgWrapper.style.float = "left";
-    // imgWrapper.style.border = "2px solid red";
 
     const img = document.createElement("img");
-    // img.style.position = "absolute";
     img.src = images[i];
     img.setAttribute("slideIndex", i);
     img.classList.add("carousel-image");
@@ -88,18 +81,21 @@ function initCarousel() {
   document.body.appendChild(carousel);
 }
 
-// if (carouselMode) {
 function startCarousel() {
+  if (!carouselMode) {
+    return;
+  }
   initCarousel();
   setInterval(slideLeft, 4000);
 }
 
 function stopCarousel() {
   const bodyChildren = document.body.childNodes;
-  //console.log(bodyChildren);
+
   for (let i = 0; i < bodyChildren.length; i++) {
     if (bodyChildren[i].className === "carousel") {
       document.body.removeChild(document.body.childNodes[i]);
+      window.cancelAnimationFrame(animationFrame);
     }
   }
 }

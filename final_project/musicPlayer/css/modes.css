@@ -1,0 +1,113 @@
+body.paper #modes-container {
+  width: 100vw;
+  height: 9vh;
+  position: absolute;
+  bottom: 0%;
+  background-size: 2%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.paper #modes-container #modes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  bottom: -20vh;
+  background-color: whitesmoke;
+  transition: 300ms ease-in-out;
+  z-index: 99;
+}
+
+body.paper #modes-container button.modes-btn {
+  height: 40px;
+  width: 40px;
+  margin: 0 1rem;
+  border-radius: 50%;
+  background-color: #d2d2d2;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 30ms ease-in;
+}
+
+#modes-container button.modes-btn:hover {
+  transform: scale(1.2);
+}
+#modes-container button.modes-btn.active {
+  background-color: #fff;
+  border: 2px solid salmon;
+}
+#modes-container button#toggle-theme {
+  background-size: 80%;
+  background-image: url("../res/images/icons/sun.png");
+}
+#modes-container button#toggle-theme.active {
+  background-image: url("../res/images/icons/moon.png");
+}
+#modes-container button#toggle-random-play {
+  background-size: 80%;
+  background-image: url("../res/images/icons/rapper-outline.png");
+}
+#modes-container button#toggle-random-play.active {
+  background-image: url("../res/images/icons/rapper-color.png");
+}
+#modes-container button#toggle-bubbles {
+  background-size: 80%;
+  background-image: url("../res/images/icons/bubble-outline.png");
+}
+#modes-container button#toggle-bubbles.active {
+  background-color: #fff;
+  background-image: url("../res/images/icons/bubble.png");
+}
+#modes-container button#toggle-rain {
+  background-size: 80%;
+  background-image: url("../res/images/icons/cloud-outline.png");
+}
+#modes-container button#toggle-rain.active {
+  background-color: black;
+  background-size: 97%;
+  background-image: url("../res/images/icons/cloud-solid.png");
+}
+#modes-container button#toggle-visualizer {
+  background-size: 80%;
+  background-image: url("../res/images/icons/prism4.png");
+}
+#modes-container button#toggle-visualizer.active {
+  /* background-size: 80%; */
+  background-color: black;
+  background-image: url("../res/images/icons/prism3.png");
+}
+
+#modes-container button#toggle-circular-visualizer {
+  background-size: 80%;
+  background-image: url("../res/images/icons/color-circle.png");
+}
+#modes-container button#toggle-circular-visualizer.active {
+  /* background-size: 80%; */
+  background-color: black;
+  background-image: url("../res/images/icons/color-palette.png");
+}
+
+#modes-container button#toggle-carousel {
+  background-size: 70%;
+  background-image: url("../res/images/icons/photograph-outline.png");
+}
+#modes-container button#toggle-carousel.active {
+  background-color: black;
+  background-size: 70%;
+  background-image: url("../res/images/icons/photograph-color.png");
+}
+#modes-container button#toggle-awesome-mix {
+  background-size: 120%;
+  background-image: url("../res/images/icons/groot1.png");
+}
+#modes-container button#toggle-awesome-mix.active {
+  background-size: 80%;
+  background-image: url("../res/images/icons/groot1-brown.png");
+}

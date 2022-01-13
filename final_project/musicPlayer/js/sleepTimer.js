@@ -1,13 +1,6 @@
-/* <div id="sleep-timer">
-<div id="countdown">00:00</div>
-<button id="sleep-button"></button>*/
-
-// let chosenDuration = -1;
 let chosenDuration = 0;
 const timers = [null, 0.5, 1, 10, 20, 30, 45, 60, 120];
 let confirmed = false;
-// const timerContainer = document.getElementById("sleep-timer-container");
-// const countdown = document.getElementById("countdown");
 const duration = document.getElementById("duration-display");
 const sleepBtn = document.getElementById("sleep-button");
 const btnImage = sleepBtn.getElementsByTagName("img")[0];
@@ -19,22 +12,16 @@ let confirmationTimeout;
 let sleepTimer;
 function startTimer(time) {
   const totalDuration = time * 60 * 1000;
-  // console.log("total duration: ", totalDuration);
-  const heightLeft = getBoundary(timeLeft).height;
+  let heightLeft = getBoundary(timeLeft).height;
   callInterval = Math.ceil(totalDuration / heightLeft);
 
   sleepTimer = setInterval(() => {
-    // timePast.style.height = getBoundary(timePast).height + 1 + "px";
-    // console.log("decreasing");
-    timeLeft.style.height = getBoundary(timeLeft).height - 1 + "px";
-    if (getBoundary(timeLeft).height < 1) {
-      // console.log("time up");
+    heightLeft = heightLeft - 1;
+    timeLeft.style.height = heightLeft + "px";
+    if (heightLeft < 1) {
       timeLeft.style.height = "0px";
-
+      displayHint("Good Night !");
       shutdownAllFeatures();
-      // rainMode = false;
-      // endRain();
-      // rainToggleBtn.classList.remove("active");
       btnImage.src = "../res/images/icons/snoozed-robot.png";
       clearInterval(sleepTimer);
     }
@@ -65,36 +52,31 @@ function shutdownAllFeatures() {
 function resetTimer() {
   clearTimeout(confirmationTimeout);
   clearInterval(sleepTimer);
-  btnImage.src = "../res/images/icons/snooze-blank.png";
+  btnImage.src = "../res/images/icons/zzz.png";
   duration.style.right = "1rem";
   timeLeft.style.height = "100%";
 }
 
-sleepBtn.addEventListener("click", () => {
+sleepBtn.addEventListener("click", (sleepInit) => {
   resetTimer();
   chosenDuration = (chosenDuration + 1) % timers.length;
   duration.innerHTML =
     timers[chosenDuration] === null ? "" : timers[chosenDuration] + " min";
   confirmed = false;
 
-  // if (!confirmed && confirmationTimeout && sleepTimer) {
-  //   resetTimer();
-  // }
   confirmationTimeout = setTimeout(() => {
     confirmed = true;
     if (confirmed && timers[chosenDuration]) {
       btnImage.src = "../res/images/icons/sleeping.png";
       duration.style.right = "-400px";
       startTimer(timers[chosenDuration]);
-      console.log("sleeping for ", timers[chosenDuration], "min");
+      displayHint(`sleeping after ${timers[chosenDuration]} minutes`);
     } else {
-      // btnImage.src = "../res/images/icons/sleeping.png";
-      console.log("sleeping for ", timers[chosenDuration], "min");
-      // resetTimer();
       timeLeft.style.height = "100%";
+      duration.style.bottom =
+        getBoundary(sleepInit.target.parentNode).top + "px";
       duration.style.right = "-400px";
       duration.innerHTML = "";
-      // startTimer(timers[chosenDuration]);
     }
   }, 2900);
 });

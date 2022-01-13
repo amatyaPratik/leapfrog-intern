@@ -1,0 +1,268 @@
+body.paper {
+  font-weight: light;
+  font-weight: 800;
+  font-family: "Indie Flower", cursive;
+  background-color: rgb(211, 210, 211);
+  /* font-family: "Quicksand", sans-serif; */
+  /* font-family: "Poiret One", cursive; */
+  /* font-family: "Indie Flower", cursive; */
+  /* font-family: "Kalam", cursive; */
+  /* font-family: "Urbanist", sans-serif; */
+}
+body.paper #search-container input {
+  font-size: 1rem;
+  font-family: "Indie Flower", cursive;
+}
+
+body.paper #playlists-container .playlist .playlist-clickable input {
+  font-family: "Indie Flower", cursive;
+  font-size: 1.6rem;
+}
+body.paper.day #music-container {
+  box-shadow: 0 0 7px rgba(0, 0, 200, 0.4);
+  background-color: sienna;
+}
+
+body.paper #search-container .suggestion {
+  font-size: 1rem;
+  font-weight: 800;
+}
+body.paper .progress-container {
+  background: #fff;
+  border-radius: 0px;
+  opacity: 0;
+  height: 0.5rem;
+  width: 90%;
+}
+body.paper #playlists-container .playlist .playlist-song-count {
+  font-size: 1.1rem;
+  font-style: oblique;
+}
+body.paper #playlists-container button#create-playlist {
+  border-radius: 50%;
+  padding: 0.9rem;
+  font-weight: 800;
+  height: 4vmax;
+  width: 4vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.paper p#duration-display {
+  color: black;
+  right: 1rem;
+  bottom: 5rem;
+  font-size: 2rem;
+}
+body.paper button#sleep-button {
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 50%;
+  right: 1.4rem;
+  bottom: 5.2rem;
+}
+body.paper button#sleep-button #time-left {
+  background-color: whitesmoke;
+  z-index: -3;
+}
+/** for day */
+body.paper.day {
+  background-color: whitesmoke;
+}
+body.paper.day #changeSchemeButtons,
+body.paper.day #changeSchemeButtons Button {
+  box-shadow: 0 0 7px rgba(0, 0, 100, 0.6);
+}
+
+body.paper.day #search-container input#search {
+  background-image: url("../../res/images/icons/search-black.png");
+}
+
+body.paper.day #search-container .suggestion:hover {
+  box-shadow: 0 0 7px burlywood;
+}
+
+body.paper.day #music-container .music-info-top {
+  font-size: 1.3rem;
+  color: rgba(10, 0, 80, 0.8);
+}
+body.paper.day #playlists-container {
+  border-radius: 30px 0 0 0;
+  background-color: rgba(150, 102, 62, 0.2);
+  box-shadow: 0 0 7px rgba(0, 0, 200, 0.4);
+  box-shadow: 0 0 7px rgba(150, 102, 62, 0.9);
+}
+body.paper.day #playlists-container .playlist {
+  border-bottom: 3px dashed rgba(150, 102, 62, 0.2);
+}
+body.paper #playlists-container .playlist .playlist-clickable .playlist-img {
+  font-family: "Monoton", cursive;
+  border: none;
+}
+
+body.paper.day .progress {
+  background-color: #fe8daa;
+  background-color: rgba(10, 0, 80, 0.8);
+  border-radius: 0px;
+}
+
+body.paper.day button#playlists-toggle {
+  background-image: url("../../res/images/icons/music-album.png");
+}
+
+body.paper.day #playlists-container .playlist .playlist-dd {
+  font-size: 0.88rem;
+  color: rgba(10, 0, 80, 0.8);
+}
+body.paper.day #modes-container {
+  border: 3px dashed rgba(0, 0, 0, 0.1);
+  background-image: url("../../res/images/icons/chevron.png");
+}
+body.paper.day #modes-container #modes {
+  background-color: rgba(157, 120, 81, 1);
+  background-color: sienna;
+  box-shadow: 0 0 7px rgba(0, 0, 200, 0.4);
+}
+body.paper.day #playlists-container button#create-playlist {
+  border: 3px dashed rgba(32, 19, 6, 0.7);
+}
+
+/**dark theme*/
+body.paper.night {
+  background-color: #333333;
+}
+body.paper.night #changeSchemeButtons,
+body.paper.night #changeSchemeButtons Button {
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+}
+body.paper.night {
+  background-color: #1e1e1e;
+}
+body.paper.night #search-container input#search {
+  background-image: url("../../res/images/icons/search-white.png");
+}
+
+body.paper.night #search-container .suggestion:hover {
+  box-shadow: 0 0 7px black;
+}
+body.paper.night #music-container {
+  box-shadow: 0 0 7px black;
+  background-color: rgba(150, 102, 62, 1);
+}
+body.paper.night #music-container .music-info-top {
+  font-size: 1.3rem;
+  color: rgba(150, 102, 62, 1);
+  text-shadow: 0 2px 2px black;
+  background-image: linear-gradient(
+    10deg,
+    rgb(247, 247, 247) 23%,
+    rgb(252, 221, 221) 90%
+  );
+}
+body.paper.night #playlists-container {
+  border-radius: 30px 0 0 0;
+  background-color: rgba(150, 102, 62, 1);
+}
+body.paper.night #playlists-container .playlist {
+  border-bottom: 3px dashed rgba(65, 37, 6, 0.2);
+}
+body.paper.night
+  #playlists-container
+  .playlist
+  .playlist-clickable
+  .playlist-img {
+  border: none;
+}
+body.paper.night #playlists-container .playlist .playlist-clickable input {
+  color: whitesmoke;
+  font-weight: 200;
+}
+
+body.paper.night .progress {
+  background-color: rgba(150, 102, 62, 1);
+  box-shadow: 0 0 7px black;
+  border-radius: 0px;
+}
+
+body.paper.night button#playlists-toggle {
+  background-image: url("../../res/images/icons/music-album-white.png");
+}
+
+body.paper.night #playlists-container .playlist .playlist-dd {
+  font-size: 1rem;
+  color: #1e1e1e;
+}
+
+body.paper.night #modes-container {
+  border: 3px dashed rgba(0, 0, 0, 0.1);
+  background-image: url("../../res/images/icons/chevron-white.png");
+}
+body.paper.night #modes-container #modes {
+  background-color: rgba(150, 102, 62, 1);
+  background-color: #1e1e1e;
+  box-shadow: 0 0 7px rgba(0, 0, 10, 0.4);
+}
+body.paper.night #playlists-container button#create-playlist {
+  border: 3px solid rgba(32, 19, 6, 0.7);
+}
+
+body.paper.night .grid {
+  font-weight: 500;
+  color: whitesmoke;
+  text-shadow: 0 1px 3px black;
+}
+
+body.paper.night p#duration-display {
+  color: rebeccapurple;
+  right: 1rem;
+  bottom: 10rem;
+}
+body.paper.night button#sleep-button #time-left {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  body.paper #modes-container {
+    width: 100vw;
+    background-size: 4%;
+  }
+  body.paper #modes-container #modes {
+    width: 100%;
+    justify-content: center;
+  }
+  body.paper #modes-container button.modes-btn {
+    height: 40px;
+    width: 40px;
+    margin: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body.paper #modes-container {
+    width: 100vw;
+    background-size: 5%;
+  }
+  body.paper #modes-container #modes {
+    width: 100%;
+    justify-content: center;
+  }
+  body.paper #modes-container button.modes-btn {
+    height: 40px;
+    width: 40px;
+    margin: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 448px) {
+  body.paper #modes-container {
+    width: 100vw;
+    background-size: 8%;
+  }
+  body.paper #modes-container #modes {
+    width: 100%;
+    justify-content: space-around;
+  }
+}

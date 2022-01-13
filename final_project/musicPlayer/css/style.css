@@ -1,32 +1,39 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Quicksand:wght@300;500&family=Urbanist:wght@100;500&display=swap"); */
-
 /* @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&family=Indie+Flower&family=Kalam:wght@300&family=Quicksand:wght@300;500&family=Spartan:wght@100&family=Urbanist:wght@100;500&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&family=Indie+Flower&family=Kalam:wght@300&family=Monoton&family=Poiret+One&family=Quicksand:wght@300;500&family=Spartan:wght@100&family=Urbanist:wght@100;500&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Quicksand", sans-serif;
-  /* font-family: "Urbanist", sans-serif; */
-  font-weight: light;
 }
 
 body {
   height: 100vh;
-
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   background-color: #000;
+  background-color: whitesmoke;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 0;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   position: relative;
 }
+
+#hint {
+  position: absolute;
+  top: 20%;
+  font-size: 2.3rem;
+  color: rebeccapurple;
+  z-index: 999;
+}
+
 .bubble {
+  background-color: rgba(255, 255, 255, 0.009);
+  filter: blur(0.1px);
+  -webkit-filter: blur(0.1px);
+
   background-image: url("../res/images/sprites/bubble2.png");
   background-size: cover;
   background-position: center;
@@ -41,20 +48,6 @@ body #box {
   border: none;
   z-index: 0;
 }
-.img-wrapper {
-  /* Add the blur effect */
-  /* filter: blur(8px);
-  -webkit-filter: blur(8px); */
-  /* background-image: linear-gradient(
-    90deg,
-    rgb(0, 0, 10) 23%,
-    rgb(0, 10, 0) 90%
-  ); */
-}
-/* .img-wrapper img {
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
-} */
 body.nurturing {
   background-image: linear-gradient(
     10deg,
@@ -62,33 +55,30 @@ body.nurturing {
     rgb(252, 221, 221) 90%
   );
 }
-#music-container {
-  /* background-color: rgb(237, 199, 135); */
-  background-image: linear-gradient(
-    10deg,
-    rgb(247, 247, 247) 23%,
-    rgb(252, 221, 221) 90%
-  );
-  /* background-color: transparent; */
+
+body.paper #music-container,
+body.paper #music-container.normal-mode {
   border-radius: 15px;
   display: flex;
   padding: 20px 30px;
   position: relative;
-  margin: 0 auto;
-  /* margin-top: 20%; */
-  /* margin-bottom: 0; */
+  transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 10;
-  /* height: 6rem; */
-  /* border: 2px solid firebrick; */
 }
-#music-container.awesome-mix-mode {
-  font-family: "Kalam", cursive;
+body #music-container.normal-mode.stick-to-bottom {
+  position: absolute;
+  bottom: 12vh;
+  transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+#music-container.normal-mode.stick-to-center {
+  position: relative;
+  margin: 0 auto;
+}
+
 .img-container {
   position: relative;
   width: 110px;
   user-select: none;
-  /* border: 2px solid firebrick; */
 }
 
 .img-container::after {
@@ -114,13 +104,12 @@ body.nurturing {
   bottom: 0;
   left: 0;
 }
-/* regarding spin animation */
+/* regarding spin animation speed*/
 .img-container.speed-0 img {
   animation: rotate 5s linear infinite;
   animation-play-state: paused;
 }
 
-/* regarding spin animation */
 .img-container.speed-1 img {
   animation: rotate 4s linear infinite;
   animation-play-state: paused;
@@ -146,7 +135,6 @@ body.nurturing {
 
 #music-container.playing .img-container img {
   animation-play-state: running;
-  /* border: 2px solid green; */
 }
 
 @keyframes rotate {
@@ -157,135 +145,12 @@ body.nurturing {
     transform: rotate(360deg);
   }
 }
-#search-container {
-  position: fixed;
-  top: 20px;
-  left: -180px;
-  /* margin-left: 0; */
-  /* float: left; */
-  width: 14rem;
-  height: 36rem;
-  /* height: fit-content; */
-  /* background-color: aqua; */
-  z-index: 999;
-  transition: 500ms;
-  overflow-y: scroll;
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-#search-container::-webkit-scrollbar {
-  display: none;
-}
-
-input#search {
-  position: relative;
-  font-size: 1rem;
-  /* left: -150px; */
-  border-radius: 0 25px 25px 0;
-  width: 100%;
-  /* top: 40px; */
-  /* background-color: #d2d2d2; */
-  background-color: transparent;
-  background-image: url("../res/images/icons/search-white.png");
-  background-size: 10%;
-  background-repeat: no-repeat;
-  border: none;
-  outline: none;
-  background-position: 95%;
-  padding: 10px 8px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-input#search:focus {
-  background-color: #fff;
-}
 
 #playlist-select {
   position: absolute;
   top: 0;
   font-size: 1rem;
-}
-.suggestion {
-  position: relative;
-  /* left: 0px; */
-  left: -450px;
-  width: 83%;
-  margin: 2px 0;
-  transition: 100ms;
-  /* border-radius: 0 25px 25px 0; */
-  border-radius: 0 1px 1px 0;
-  background-color: #d2d2d2;
-  color: #1e1e1e;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 10px 8px;
-  cursor: pointer;
-  padding-right: 10%;
-  /* text-align: right; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: space-between; */
-}
-
-.suggestion:hover {
-  /* width: 100%; */
-  margin-left: 5%;
-  /* margin-left: 0%; */
-  /* font-size: 1rem; */
-  /* font-weight: bold; */
-  color: black;
-  box-shadow: 0 0 13px black;
-  background-color: white;
-  /* text-shadow: 0 1px 2px whitesmoke; */
-}
-/* #search-container .suggestion p.suggestion-title {
-  text-align: right;
-  border: 1px solid firebrick;
-  user-select: none;
-} */
-#search-container .suggestion button.add-to-playlist {
-  /* position: absolute; */
-  position: absolute;
-  width: 1.7rem;
-  width: 17%;
-  height: 1.7rem;
-  height: 100%;
-  z-index: 9;
-  right: 0rem;
-  border: none;
-  margin: 0 0.3rem;
-  /* border: 1px dashed gray; */
-  /* border-radius: 50%; */
-  cursor: pointer;
-  top: 0;
-  bottom: 0;
-  /* left: 0; */
-  background-color: transparent;
-  /* background-color: #000; */
-  background-image: url("../res/images/icons/plus-green.png");
-  background-size: 0%;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 60ms;
-}
-.songItem {
-  position: relative;
-  /* left: 0px; */
-  left: 0px;
-  width: 100%;
-  margin: 2px 0;
-  transition: 1000ms;
-  border-radius: 0 25px 25px 0;
-  background-color: #fff;
-  color: #000;
-  font-size: 14px;
-  padding: 10px 8px;
-  cursor: pointer;
+  z-index: 990;
 }
 
 .navigation {
@@ -293,13 +158,10 @@ input#search:focus {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  /* background-color: #de3;
-  border: 2px solid yellow; */
 }
 .action-btn {
   background-color: transparent;
-  border: 0;
-  /* border: 1px solid red; */
+  border: none;
   color: #dfdbdf;
   cursor: pointer;
   padding: 1.2rem 1rem;
@@ -307,9 +169,7 @@ input#search:focus {
   color: teal;
 }
 .action-btn.action-btn-big {
-  color: #cdc2d0;
-  /* color: teal; */
-  font-size: 30px;
+  width: 12%;
 }
 .action-btn:focus {
   outline: 0;
@@ -338,7 +198,14 @@ input#search:focus {
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
-  /* border: 0; */
+}
+.navigation button#eqToggleBtn {
+  background-color: transparent;
+  background-image: url("../res/images/icons/equalizer.png");
+  background-image: url("../res/images/icons/equalizer-outline.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .music-info-top {
   background-color: rgba(255, 255, 255, 0.5);
@@ -356,12 +223,12 @@ input#search:focus {
 #music-container.playing .music-info-top {
   opacity: 1;
   transform: translateY(-100%);
-  /* color: red; */
   z-index: 0;
 }
 .music-info-top h4 {
   margin: 0;
 }
+
 .progress-container {
   position: absolute;
   background: #fff;
@@ -375,11 +242,8 @@ input#search:focus {
   margin-left: 50%;
   transform: translateX(-50%);
   transition: all 0.3s ease-in;
-  /* box-shadow: 0 10px 13px cyan; */
 }
 .progress {
-  background-color: #fe8daa;
-  border-radius: 5px;
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
@@ -392,7 +256,7 @@ input#search:focus {
 
 #canvas {
   background-color: transparent;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
@@ -400,26 +264,20 @@ input#search:focus {
   width: 100%;
   height: 100%;
   z-index: -1;
-  /* background-color: forestgreen; */
-  /* background-image: url("../user/user1.jpg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat; */
 }
 #canvas.circular {
   filter: blur(10px) contrast(20);
+  -webkit-filter: blur(10px) contrast(20);
 }
 
-/* _______________________________________________ */
 #changeSchemeButtons,
 #changeSchemeButtons Button {
   cursor: pointer;
   color: #fff;
   border: none;
   border-radius: 50%;
-  /* padding: 20px 10px; */
   font-size: 1.5rem;
-  position: fixed;
+  position: absolute;
   top: 5%;
   margin-left: auto;
   margin-right: auto;
@@ -430,15 +288,12 @@ input#search:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-color: gray;
-  /* background-color: blue; */
-  /* border: 1px solid black; */
   transition: all 400ms;
 }
 #changeSchemeButtons {
   background-image: url("../res/images/icons/arrow2.png");
 }
 #changeSchemeButtons button#chooseScheme {
-  /* background-image: url("../res/interlock.png"); */
   position: absolute;
   left: 0;
   top: 0;
@@ -473,91 +328,63 @@ input#search:focus {
   z-index: 2;
 }
 
-button#eqToggleBtn {
-  cursor: pointer;
-  border: none;
-  border-radius: 20px;
-  padding: 20px 10px;
-  font-size: 1.5rem;
-  /* color: white; */
-  position: fixed;
-  top: 45%;
-  right: 5%;
-  width: 60px;
-  height: 40px;
-  /* height: fit-content; */
-  text-align: center;
-  background-color: transparent;
-  background-image: url("../res/images/icons/equalizer.png");
-  background-size: 40%;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 8;
-}
-button#eqToggleBtn:active {
-  border: 1px solid darkgoldenrod;
+#random-file {
+  position: absolute;
+  bottom: -10vh;
+  color: teal;
 }
 .grid {
-  /* position: fixed;
-  top: 0; */
   position: absolute;
-  right: 5%;
-  top: -50vh;
+  font-weight: 800;
   display: grid;
+  display: none;
   grid-template-columns: auto min-content;
   justify-content: center;
-  justify-items: end;
+  justify-items: start;
+  text-align: end;
   align-items: center;
   gap: 5px 10px;
-  color: wheat;
   z-index: 20;
   transition: 300ms;
+}
+.grid input {
+  color: black;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif,
+    Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.carousel .images img {
+  border: 20px solid white;
 }
 
 p#duration-display {
   position: absolute;
-  color: wheat;
+  color: black;
   z-index: 90;
   right: 1rem;
-  bottom: 6.6rem;
+  bottom: 5rem;
   font-size: 2rem;
   text-align: center;
   transition: 600ms;
 }
 button#sleep-button {
   position: absolute;
-  width: 4.2rem;
-  height: 4.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   padding: 0.7rem;
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  right: 0.9rem;
-  bottom: 0.9rem;
+  right: 1.4rem;
+  bottom: 5.2rem;
+  transform: rotate(3deg);
   overflow: hidden;
   z-index: 1;
-  background-color: transparent;
+  background-color: black;
 }
 button#sleep-button img {
-  /* position: absolute; */
-  width: 82%;
-  /* z-index: 1; */
-  /* border: 2px solid firebrick; */
-}
-/* button#sleep-button #time-past {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
-  height: 0%;
-  float: left;
-  background-color: gray;
-  z-index: -3;
-  background-image: url("../res/stars-bg.jpg");
-  background-size: 110%;
-  background-repeat: no-repeat;
-  background-position: center;
-} */
+}
 button#sleep-button #time-left {
   position: absolute;
   bottom: 0;
@@ -565,8 +392,86 @@ button#sleep-button #time-left {
   float: left;
   width: 100%;
   height: 100%;
-  background-color: #113859;
+  background-color: whitesmoke;
   z-index: -3;
+}
+
+@media screen and (max-width: 900px) {
+  body.paper #canvas:not(.circular) {
+    height: 100vh;
+
+    transform: translateY(44vh);
+  }
+}
+@media screen and (max-width: 600px) {
+  body.paper #music-container.normal-mode {
+    width: 90vw;
+  }
+  body.paper #canvas:not(.circular) {
+    height: 800vh;
+    transform: translateY(44vh);
+  }
+}
+@media screen and (max-width: 448px) {
+  body.paper #music-container.normal-mode {
+    width: 90vw;
+    position: absolute;
+    bottom: 30vh;
+  }
+  body.paper #canvas:not(.circular) {
+    height: 900vh;
+    transform: translateY(40vh);
+  }
+  body.paper #music-container.normal-mode.stick-to-bottom {
+    bottom: 10vh;
+    transition: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  body.paper #music-container.normal-mode .img-container {
+    position: absolute;
+    width: 110px;
+    user-select: none;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 28vh;
+  }
+  #music-container.normal-mode .img-container::after {
+    content: "";
+    display: none;
+  }
+  #music-container.normal-mode .music-info-top {
+    background-color: transparent;
+    text-align: center;
+    height: 10vh;
+  }
+  #music-container.normal-mode .music-info-top h4 {
+    position: absolute;
+    padding: 10px 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 1.2rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #music-container.normal-mode .navigation {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .action-btn {
+    background-color: transparent;
+    border: none;
+    color: #dfdbdf;
+    cursor: pointer;
+    padding: 0.9rem 0.6rem;
+  }
+  button#sleep-button {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+  button#sleep-button img {
+    width: 130%;
+  }
 }
 
 .bubble {
@@ -575,109 +480,3 @@ button#sleep-button #time-left {
   background-position: center;
   z-index: 1;
 }
-
-#modes {
-  width: 20rem;
-  position: absolute;
-  bottom: 3%;
-  /* background-color: #fff; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* height: 2px; */
-}
-
-#modes button.modes-btn {
-  height: 40px;
-  width: 40px;
-  margin: 0 8px;
-  border-radius: 50%;
-  background-color: #d2d2d2;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  transition: transform 30ms ease-in;
-}
-#modes button.modes-btn:hover {
-  transform: scale(1.2);
-}
-#modes button.modes-btn.active {
-  background-color: #fff;
-  border: 2px solid salmon;
-}
-#modes button#toggle-bubbles {
-  background-size: 80%;
-  background-image: url("../res/images/icons/bubble-outline.png");
-}
-#modes button#toggle-bubbles.active {
-  background-color: #fff;
-  background-image: url("../res/images/icons/bubble.png");
-}
-#modes button#toggle-rain {
-  background-size: 80%;
-  background-image: url("../res/images/icons/cloud-outline.png");
-}
-#modes button#toggle-rain.active {
-  background-color: black;
-  background-size: 97%;
-  background-image: url("../res/images/icons/cloud-solid.png");
-}
-#modes button#toggle-visualizer {
-  background-size: 80%;
-  background-image: url("../res/images/icons/prism4.png");
-}
-#modes button#toggle-visualizer.active {
-  /* background-size: 80%; */
-  background-color: black;
-  background-image: url("../res/images/icons/prism3.png");
-}
-
-#modes button#toggle-circular-visualizer {
-  background-size: 80%;
-  background-image: url("../res/images/icons/color-circle.png");
-}
-#modes button#toggle-circular-visualizer.active {
-  /* background-size: 80%; */
-  background-color: black;
-  background-image: url("../res/images/icons/color-palette.png");
-}
-
-#modes button#toggle-carousel {
-  background-size: 70%;
-  background-image: url("../res/images/icons/photograph-outline.png");
-}
-#modes button#toggle-carousel.active {
-  background-color: black;
-  background-size: 70%;
-  background-image: url("../res/images/icons/photograph-color.png");
-}
-#modes button#toggle-awesome-mix {
-  background-size: 120%;
-  background-image: url("../res/images/icons/groot1.png");
-}
-#modes button#toggle-awesome-mix.active {
-  background-size: 80%;
-  background-image: url("../res/images/icons/groot1-brown.png");
-}
-
-/* #thefile {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 100;
-}
-
-#canvas {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-*/
-/* audio {
-  position: fixed;
-  left: 10px;
-  bottom: 10px;
-  width: calc(100% - 20px);
-} */

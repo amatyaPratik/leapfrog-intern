@@ -17,17 +17,32 @@
   button#playback-speed.casette-mode:active {
   border-bottom: 12px solid rgba(220, 175, 109, 1);
   border-right: 2px dashed rgba(199, 154, 84, 0.6);
-}
-#music-container.awesome-mix-mode .navigation button#play.casette-mode:active i,
-#music-container.awesome-mix-mode .navigation button#prev.casette-mode:active i,
-#music-container.awesome-mix-mode
-  .navigation
-  button#next.casette-mode:active
-  i {
-  top: 2%;
-  font-size: 1.2rem;
-} */
+} 
+#music-container.awesome-mix-mode .navigation {
+  /* border: 1px solid darkorchid; */
+/* } */
 
+#music-container.awesome-mix-mode .navigation button#eqToggleBtn {
+  background-color: transparent;
+  background-image: url("../res/images/icons/equalizer.png");
+  background-image: url("../res/images/icons/equalizer-outline.png");
+  background-size: 100%;
+  background-position: center;
+  /* background-color: #f00; */
+  position: absolute;
+  left: 30vw;
+  /* bottom: 100px; */
+  /* right: 0; */
+  background-repeat: no-repeat;
+}
+
+/* #music-container.awesome-mix-mode .navigation .grid {
+  margin: 50% 0;
+} */
+#music-container.awesome-mix-mode .player-container {
+  max-width: 100%;
+  border-right: 2px solid rgba(199, 154, 84, 0.6);
+}
 /*  speed 0 */
 #music-container.awesome-mix-mode .wheels.speed-0 .wheel-left,
 #music-container.awesome-mix-mode .wheels.speed-0 .wheel-right {

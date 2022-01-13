@@ -2,10 +2,7 @@ const volume = document.getElementById("volume");
 const bass = document.getElementById("bass");
 const mid = document.getElementById("mid");
 const treble = document.getElementById("treble");
-// const canvas = document.getElementById("canvas");
 
-// const context = new AudioContext()
-// const analyserNode = new AnalyserNode(context, { fftSize: 256 })
 const gainNode = new GainNode(context, { gain: volume.value });
 const bassEQ = new BiquadFilterNode(context, {
   type: "lowshelf",
@@ -27,7 +24,6 @@ const trebleEQ = new BiquadFilterNode(context, {
 setupEventListeners();
 
 resize();
-// drawcanvas();
 
 function setupEventListeners() {
   window.addEventListener("resize", resize);
@@ -53,15 +49,8 @@ function setupEventListeners() {
   });
 }
 
-// async
 function setupContext() {
-  //   const guitar = await getGuitar()
-  //   if (context.state === 'suspended') {
-  //     await context.resume()
-  //   }
-  //   const source = context.createMediaStreamSource(src);
   if (context.state === "suspended") {
-    // await
     context.resume();
   }
   src
@@ -72,39 +61,6 @@ function setupContext() {
     .connect(analyser)
     .connect(context.destination);
 }
-
-// function getGuitar() {
-//   return navigator.mediaDevices.getUserMedia({
-//     audio: {
-//       echoCancellation: false,
-//       autoGainControl: false,
-//       noiseSuppression: false,
-//       latency: 0
-//     }
-//   })
-// }
-
-// function drawcanvas() {
-//   requestAnimationFrame(drawcanvas)
-
-//   const bufferLength = analyserNode.frequencyBinCount
-//   const dataArray = new Uint8Array(bufferLength)
-//   analyserNode.getByteFrequencyData(dataArray)
-//   const width = canvas.width
-//   const height = canvas.height
-//   const barWidth = width / bufferLength
-
-//   const canvasContext = canvas.getContext('2d')
-//   canvasContext.clearRect(0, 0, width, height)
-
-//   dataArray.forEach((item, index) => {
-//     const y = item / 255 * height / 2
-//     const x = barWidth * index
-
-//     canvasContext.fillStyle = `hsl(${y / height * 400}, 100%, 50%)`
-//     canvasContext.fillRect(x, height - y, barWidth, y)
-//   })
-// }
 
 function resize() {
   canvas.width = canvas.clientWidth * window.devicePixelRatio;

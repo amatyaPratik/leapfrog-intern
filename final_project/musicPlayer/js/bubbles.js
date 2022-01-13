@@ -84,9 +84,7 @@ function Bubble(radius = 55, x, y) {
   // this.dx = (Math.random() > 0.5) ? 1*Math.random()*5: -Math.random()*5
   // this.dy = (Math.random() > 0.5) ? 1*Math.random()*5: -Math.random()*5
   this.dx = Math.random();
-  // 0.5 ? 1 : -1;
   this.dy = Math.random();
-  // 0.5 ? 1 : -1;
   this.bubbleHandle = document.createElement("div");
   this.speed = () => {
     return Math.sqrt(this.dx ** 2 + this.dy ** 2);
@@ -236,31 +234,21 @@ updateGameArea = (timestamp) => {
   lastRenderTime = timestamp;
 };
 
-// console.log(bubbles);
-
 if (bubbleMode) {
   startBubbles();
 }
 
 container.box.addEventListener("mousedown", (e) => {
   if (e.target.classList[0] === "bubble") {
-    console.log("bubble", e.target);
-    // new Audio(`../res/pop${Math.floor(Math.random() * 4)}.mp3`).play();
     new Audio(`../res/sounds/pop2.mp3`).play();
     e.target.style.backgroundImage = "url('../res/images/gif/pop.gif')";
-    // console.log(e.target);
     setTimeout(() => {
       e.target.style.display = "none";
-      // e.target.style.zIndex = "-1";
-      // e.target.style.top = "-400px";
     }, 100);
     setTimeout(() => {
       e.target.style.display = "initial";
       e.target.style.backgroundImage =
         "url('../res/images/sprites/bubble2.png')";
-      // e.target.style.zIndex = "1";
-      // e.target.style.top = "initial";
     }, 30000);
-    // setTimeout();
   }
 });

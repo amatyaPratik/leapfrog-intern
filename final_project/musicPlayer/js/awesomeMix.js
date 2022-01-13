@@ -32,7 +32,6 @@ function initAwesomeMixCasettePlayer() {
   playerContainer.style.margin = "0 auto";
 
   const wheelsContainer = document.createElement("div");
-  // wheelsContainer.classList.add("wheels");
   wheelsContainer.className = `wheels speed-${playBackChosen}`;
   wheelsContainer.style.position = "absolute";
   wheelsContainer.style.width = "47%";
@@ -174,7 +173,6 @@ function initAwesomeMixCasettePlayer() {
   });
 
   navigation.addEventListener("mousedown", (e) => {
-    // console.log(e.target.classList.contains("casette-mode"));
     if (e.target.classList.contains("casette-mode")) {
       e.target.style.borderTop = "4px dashed rgba(199, 154, 84, 0.6)";
       e.target.style.borderBottom = "6px solid rgba(197, 150, 92, 1)";
@@ -184,7 +182,6 @@ function initAwesomeMixCasettePlayer() {
     }
   });
   navigation.addEventListener("mouseup", (e) => {
-    // console.log(e.target.classList.contains("casette-mode"));
     if (e.target.classList.contains("casette-mode")) {
       e.target.style.borderTop = "0";
       e.target.style.borderBottom = "0";

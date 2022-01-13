@@ -6,6 +6,7 @@ const createPlaylistBtn = document.getElementById("create-playlist");
 /**playlist storage key */
 const localStorageKey = "timeless.music";
 
+/** sample collection schema */
 // let fetchedPlaylists = JSON.parse(
 //   '[{"playlist_name": "Smooth","songs": [{"song_name": "cant stiop"},{"song_name": "cant jump" },{ "song_name": "cant hump"}]},{"playlist_name": "Blues","songs": [{"song_name": "bb queen"},{"song_name": "brothers" },{ "song_name": "jazzy nights"}]}]'
 // );
@@ -18,57 +19,24 @@ playlistsContainer.addEventListener("click", (e) => {
     togglePlaylistSongs(e.target.parentNode.parentNode.parentNode);
   } else if (e.target.className === "play-playlist") {
     playPlaylist(e.target.getAttribute("parent-playlist"));
-    // console.log(e.target.parentNode);
   } else if (e.target.className === "delete-playlist") {
     deletePlaylist(e.target.getAttribute("parent-playlist"));
   } else if (e.target.className === "playlist-name") {
-    // console.log("click ignored");
     e.target.blur();
   } else if (e.target.className === "rename-playlist") {
     oldId = e.target.getAttribute("parent-playlist");
-    console.log("renaming");
-    const previousPlaylistName =
-      e.target.parentNode.parentNode.children[0].value;
-    // console.log("previousPlaylistName", previousPlaylistName);
+
     e.target.parentNode.parentNode.children[0].focus();
     e.target.parentNode.parentNode.children[0].addEventListener(
       "blur",
       (renameEvent) => {
-        console.log("bluring from input");
         if (renameEvent.target.value === "") {
-          renameEvent.target.value = previousPlaylistName;
+          renameEvent.target.value = oldId;
         } else if (
           checkIfNewPlaylist(renameEvent.target.value) &&
           oldId !== "New_Playlist"
         ) {
-          console.log("olcId", oldId);
-
-          const oldPlaylistIndex = idToPlaylistIndex(oldId);
-          const newRenamedEntry = {};
-          console.log("playlistIndex", oldPlaylistIndex);
-          newRenamedEntry.playlist_name = renameEvent.target.value;
-          newRenamedEntry.songs = fetchedPlaylists[oldPlaylistIndex].songs;
-
-          deletePlaylist(oldPlaylistIndex);
-          fetchedPlaylists.push(newRenamedEntry);
-          localStorage.setItem(
-            `${localStorageKey}.playlists`,
-            JSON.stringify(fetchedPlaylists)
-          );
-          updatePlaylistInfoDiv();
-
-          // savePlaylists();
-          updatePlaylistSelectTag();
-        } else if (
-          checkIfNewPlaylist(renameEvent.target.value) &&
-          oldId === "New_Playlist"
-        ) {
-          // fetchedPlaylists[
-          //   fetchedPlaylists.length === 0 ? 0 : fetchedPlaylists.length - 1
-          // ].playlist_name = renameEvent.target.value;
-          // console.log(renameEvent.target.parentNode.parentNode);
           const newEmptyPlaylist = document.getElementById(oldId);
-          newEmptyPlaylist.setAttribute("id", renameEvent.target.value);
 
           const newPlaylistBtn =
             newEmptyPlaylist.getElementsByClassName("play-playlist")[0];
@@ -77,7 +45,7 @@ playlistsContainer.addEventListener("click", (e) => {
             renameEvent.target.value
           );
           const newRenamePlaylistBtn =
-            newEmptyPlaylist.getElementsByClassName("play-playlist")[0];
+            newEmptyPlaylist.getElementsByClassName("rename-playlist")[0];
           newRenamePlaylistBtn.setAttribute(
             "parent-playlist",
             renameEvent.target.value
@@ -88,32 +56,75 @@ playlistsContainer.addEventListener("click", (e) => {
             "parent-playlist",
             renameEvent.target.value
           );
-          // _______________________________________________________________
-          const oldPlaylistIndex = idToPlaylistIndex(oldId);
-          const newRenamedEntry = {};
-          console.log("playlistIndex", oldPlaylistIndex);
-          newRenamedEntry.playlist_name = renameEvent.target.value;
-          newRenamedEntry.songs = fetchedPlaylists[oldPlaylistIndex].songs;
-
-          deletePlaylist(oldPlaylistIndex);
-          fetchedPlaylists.push(newRenamedEntry);
-          localStorage.setItem(
-            `${localStorageKey}.playlists`,
-            JSON.stringify(fetchedPlaylists)
+          const newPlaylistDD =
+            newEmptyPlaylist.getElementsByClassName("playlist-dd")[0];
+          newPlaylistDD.setAttribute(
+            "parent-playlist",
+            renameEvent.target.value
           );
+
+          newEmptyPlaylist.setAttribute("id", renameEvent.target.value);
+
+          const oldPlaylistIndex = idToPlaylistIndex(oldId);
+          fetchedPlaylists[oldPlaylistIndex].playlist_name =
+            renameEvent.target.value;
+
+          commitChanges();
           updatePlaylistInfoDiv();
-          // _______________________________________________________________
-          // savePlaylists();
-          // updatePlaylistSelectTag();
-          // savePlaylists();
+          updatePlaylistSelectTag();
+        } else if (
+          checkIfNewPlaylist(renameEvent.target.value) &&
+          oldId === "New_Playlist"
+        ) {
+          const newEmptyPlaylist = document.getElementById(oldId);
+
+          const newPlaylistBtn =
+            newEmptyPlaylist.getElementsByClassName("play-playlist")[0];
+          newPlaylistBtn.setAttribute(
+            "parent-playlist",
+            renameEvent.target.value
+          );
+          const newRenamePlaylistBtn =
+            newEmptyPlaylist.getElementsByClassName("rename-playlist")[0];
+          newRenamePlaylistBtn.setAttribute(
+            "parent-playlist",
+            renameEvent.target.value
+          );
+          const newPlaylistDelBtn =
+            newEmptyPlaylist.getElementsByClassName("delete-playlist")[0];
+          newPlaylistDelBtn.setAttribute(
+            "parent-playlist",
+            renameEvent.target.value
+          );
+          const newPlaylistDD =
+            newEmptyPlaylist.getElementsByClassName("playlist-dd")[0];
+          newPlaylistDD.setAttribute(
+            "parent-playlist",
+            renameEvent.target.value
+          );
+
+          newEmptyPlaylist.setAttribute("id", renameEvent.target.value);
+
+          const oldPlaylistIndex = idToPlaylistIndex(oldId);
+
+          fetchedPlaylists[oldPlaylistIndex].playlist_name =
+            renameEvent.target.value;
+
+          commitChanges();
+          updatePlaylistInfoDiv();
           updatePlaylistSelectTag();
         } else {
-          // renameEvent.target.value = "";
-          // renameEvent.target.focus();
           renameEvent.target.blur();
         }
       }
     );
+  } else if (e.target.tagName.toLowerCase() === "li") {
+    const itemInd = e.target.getAttribute("index");
+    const playlistInd = idToPlaylistIndex(
+      e.target.parentNode.parentNode.getAttribute("parent-playlist")
+    );
+
+    removeSongFromPlaylist(itemInd, playlistInd);
   } else {
   }
 });
@@ -121,25 +132,16 @@ playlistsContainer.addEventListener("click", (e) => {
 playlistsToggleBtn.addEventListener("click", togglePlaylists);
 
 createPlaylistBtn.addEventListener("click", () => {
-  // console.log("creating");
-  // console.log("fetchedlist: ", fetchedPlaylists);
   createPlaylist();
-
-  // const newEntry = {}
-  // newEntry.playlist_name =
-
-  // localStorage.setItem(
-  //   `${localStorageKey}.playlists`,
-  //   JSON.stringify(fetchedPlaylists)
-  // );
 });
 
 function togglePlaylists() {
   if (getBoundary(playlistsContainer).right - screen.width === 0) {
-    // console.log("on tab");
-    playlistsContainer.style.right = "-14rem";
+    playlistsContainer.style.right = "-26rem";
+    createPlaylistBtn.style.right = "-26rem";
   } else {
     playlistsContainer.style.right = "0";
+    createPlaylistBtn.style.right = "1.3rem";
   }
 }
 
@@ -161,8 +163,14 @@ function idToPlaylistIndex(playlistId) {
   return toBeReturnedPlaylistIndex;
 }
 function playPlaylist(playlistId) {
+  const chosenPlaylistIndex = idToPlaylistIndex(playlistId);
+
+  playlistArray = fetchedPlaylists[chosenPlaylistIndex].songs;
+  if (playlistArray.length === 0) {
+    return;
+  }
+
   playlistSongIndex = 0;
-  // console.log("playing");
   playlistMode = true;
 
   const playlists = document.getElementsByClassName("playlist");
@@ -171,34 +179,21 @@ function playPlaylist(playlistId) {
   }
   document.getElementById(playlistId).classList.add("active");
 
-  const chosenPlaylistIndex = idToPlaylistIndex(playlistId);
-  // playlistArray = fetchedPlaylists[chosenPlaylistIndex]["songs"];
-  // console.log(
-  //   "so called undefined. fetchedPlaylists[chosenPlaylistIndex]",
-  //   fetchedPlaylists[chosenPlaylistIndex]
-  // );
-  // console.log("so called undefined. chosenPlaylistIndex", chosenPlaylistIndex);
-  playlistArray = fetchedPlaylists[chosenPlaylistIndex].songs;
-  // console.log(playlistArray[0]);
   loadSong(songs[playlistArray[playlistSongIndex]]);
 
   const isPlaying = musicContainer.classList.contains("playing");
 
   if (!isPlaying) {
     setupContext();
-    playSong();
-  } else {
-    playSong();
   }
+  displayHint(`Playing track: ${playlistId}`);
+  playSong();
 }
 
 function deletePlaylist(playlistId) {
   const chosenPlaylistIndex = idToPlaylistIndex(playlistId);
   fetchedPlaylists.splice(chosenPlaylistIndex, 1);
-  localStorage.setItem(
-    `${localStorageKey}.playlists`,
-    JSON.stringify(fetchedPlaylists)
-  );
+  commitChanges();
   fetchedPlaylists = JSON.parse(
     localStorage.getItem(`${localStorageKey}.playlists`)
   );
@@ -206,7 +201,6 @@ function deletePlaylist(playlistId) {
   const playlistsContainer = document.getElementById("playlists-container");
   for (let i = 0; i < playlistsContainer.children.length; i++) {
     if (playlistsContainer.children[i].getAttribute("id") == playlistId) {
-      // console.log(playlistsContainer.children[i]);
       playlistsContainer.removeChild(playlistsContainer.children[i]);
     }
   }
@@ -224,7 +218,6 @@ function checkIfNewPlaylist(desiredPlaylistName = "New Playlist") {
           "New_Playlist"
       ) {
         newPlaylist = false;
-        // console.log("playlist already exists");
       }
     }
     if (newPlaylist) {
@@ -241,16 +234,12 @@ function checkIfNewPlaylist(desiredPlaylistName = "New Playlist") {
       fetchedPlaylists.forEach((entry, index) => {
         if (entry.playlist_name === desiredPlaylistName) {
           newPlaylist = false;
-          // console.log("clashed with ", index);
         }
       });
 
-      // }
-      // console.log("checking for ", desiredPlaylistName);
       if (newPlaylist) {
         return true;
       } else {
-        console.log("rejected");
         return false;
       }
     }
@@ -268,43 +257,22 @@ function updatePlaylistInfoDiv() {
     )[0].textContent = `${fetchedPlaylists[i].songs.length} songs`;
 
     let containedSongNameLi = "<ul>";
-    fetchedPlaylists[i].songs.forEach((playlistSongIndex) => {
-      containedSongNameLi += `<li>${songs[playlistSongIndex]}</li>`;
+    fetchedPlaylists[i].songs.forEach((playlistSongIndex, index) => {
+      containedSongNameLi += `<li index=${index}>${songs[playlistSongIndex]}</li>`;
     });
     containedSongNameLi += "</ul>";
-    // console.log("containedSongNameLi", containedSongNameLi);
     playlists[i].getElementsByClassName("playlist-dd")[0].innerHTML =
       containedSongNameLi;
   }
-}
-
-function addSongToPlaylist(songIndex, playlistIndex = 0) {
-  fetchedPlaylists[playlistIndex].songs.push(+songIndex);
-  /** commit changes */
-  localStorage.setItem(
-    `${localStorageKey}.playlists`,
-    JSON.stringify(fetchedPlaylists)
-  );
-  updatePlaylistInfoDiv();
-  // console.log(
-  //   "added ",
-  //   songs[songIndex],
-  //   " to ",
-  //   fetchedPlaylists[playlistIndex].playlist_name
-  // );
 }
 
 function updatePlaylistSelectTag() {
   // removing old Select tag;
   let oldPlaylistSelect = document.getElementById("playlist-select");
   if (oldPlaylistSelect) {
-    // console.log("oldPlaylistSelect", oldPlaylistSelect);
     for (let i = 0; i < document.body.children.length; i++) {
       if ("playlist-select" === document.body.children[i].getAttribute("id")) {
-        // console.log(
-        // "reday to delet",
         document.body.removeChild(document.body.children[i]);
-        // );
       }
     }
   }
@@ -397,13 +365,14 @@ function displayPlaylists(fetchedPlaylist) {
 
   const newPlaylistDD = document.createElement("div");
   newPlaylistDD.classList.add("playlist-dd");
+  newPlaylistDD.setAttribute("parent-playlist", newPlaylist.getAttribute("id"));
 
   const newPlaylistUL = document.createElement("ul");
 
   let liInProgress = "";
   if (fetchedPlaylist) {
-    fetchedPlaylist.songs.forEach((songIndex) => {
-      liInProgress += `<li>${songs[songIndex]}</li>`;
+    fetchedPlaylist.songs.forEach((songIndex, index) => {
+      liInProgress += `<li index=${index}>${songs[songIndex]}</li>`;
     });
   }
 
@@ -430,17 +399,43 @@ function displayPlaylists(fetchedPlaylist) {
   playlistsContainer.appendChild(newPlaylist);
 }
 
+function songAlreadyInList(songInd, playlistInd) {
+  const alreadyPresent = (s) => {
+    return s == songInd;
+  };
+  return fetchedPlaylists[playlistInd].songs.some(alreadyPresent, songInd);
+}
+
+function addSongToPlaylist(songInd, playlistInd) {
+  if (songAlreadyInList(songInd, playlistInd)) {
+    displayHint("Song already in List");
+    return;
+  }
+  fetchedPlaylists[playlistInd].songs.push(+songInd);
+  commitChanges();
+  updatePlaylistInfoDiv();
+}
+
+function removeSongFromPlaylist(itemInd, playlistInd) {
+  displayHint(
+    `Removed ${
+      songs[fetchedPlaylists[playlistInd].songs.splice(itemInd, 1)]
+    } from ${fetchedPlaylists[playlistInd].playlist_name}`
+  );
+  commitChanges();
+  updatePlaylistInfoDiv();
+}
+
 function createPlaylist(fetchedPlaylist) {
   if (!checkIfNewPlaylist(fetchedPlaylist)) {
-    console.log(
-      "playlist already exists. Rename your playlist to a unique name"
+    displayHint(
+      "playlist already exists. Rename New_Playlist to a unique name"
     );
     return;
   } else {
     displayPlaylists(fetchedPlaylist);
 
     if (!fetchedPlaylist) {
-      // console.log(fetchedPlaylist);
       const newEntry = {};
       const tempPlaylists = document.getElementsByClassName("playlist");
 
@@ -448,22 +443,16 @@ function createPlaylist(fetchedPlaylist) {
         tempPlaylists[tempPlaylists.length - 1].getAttribute("id");
 
       newEntry.songs = [];
-      console.log("newEntry", newEntry);
 
       fetchedPlaylists.push(newEntry);
+
+      commitChanges();
       updatePlaylistSelectTag();
     }
-
-    // localStorage.setItem(
-    //   `${localStorageKey}.playlists`,
-    //   JSON.stringify(fetchedPlaylists)
-    // );
   }
 }
 
 function savePlaylists() {
-  // console.log("old fetchedPlaylists", fetchedPlaylists);
-
   const currentPlaylists = document.getElementsByClassName("playlist");
 
   let newEntry = {
@@ -475,6 +464,14 @@ function savePlaylists() {
   fetchedPlaylists.push(newEntry);
 }
 
+/** commit changes to localStorage */
+function commitChanges() {
+  localStorage.setItem(
+    `${localStorageKey}.playlists`,
+    JSON.stringify(fetchedPlaylists)
+  );
+}
+
 function fetchPlaylists() {
   if (typeof Storage !== "undefined") {
     fetchedPlaylists = JSON.parse(
@@ -482,13 +479,9 @@ function fetchPlaylists() {
     );
 
     if (fetchedPlaylists) {
-      // console.log("fetched is not null");
-      // console.log("fetchedPlaylists", fetchedPlaylists);
       populatePlaylists();
     } else {
-      // console.log("fetched is null");
       fetchedPlaylists = [];
-      // populatePlaylists();
     }
   } else {
     alert("Sorry, your browser does not support Web Storage...");
@@ -503,7 +496,15 @@ function populatePlaylists() {
     });
   } else {
     document.getElementById("empty-tag").innerHTML = "nothing to show";
-    // console.log("nothing to show");
+  }
+}
+
+function stopPlaylistMode() {
+  playlistMode = false;
+
+  const playlists = document.getElementsByClassName("playlist");
+  for (let i = 0; i < playlists.length; i++) {
+    playlists[i].classList.remove("active");
   }
 }
 fetchPlaylists();
