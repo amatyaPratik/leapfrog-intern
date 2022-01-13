@@ -241,14 +241,14 @@ if (bubbleMode) {
 container.box.addEventListener("mousedown", (e) => {
   if (e.target.classList[0] === "bubble") {
     new Audio(`../res/sounds/pop2.mp3`).play();
-    e.target.style.backgroundImage = "url('../res/images/gif/pop.gif')";
+    e.target.style.backgroundImage = "url('./res/images/gif/pop.gif')";
     setTimeout(() => {
       e.target.style.display = "none";
     }, 100);
     setTimeout(() => {
       e.target.style.display = "initial";
       e.target.style.backgroundImage =
-        "url('../res/images/sprites/bubble2.png')";
+        "url('./res/images/sprites/bubble2.png')";
     }, 30000);
   }
 });
