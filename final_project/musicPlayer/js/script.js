@@ -17,7 +17,7 @@ const shuffleScheme = document.getElementById("shuffleScheme");
 const repeatScheme = document.getElementById("repeatScheme");
 
 const audio = document.createElement("audio");
-audio.src = "../songs/Ed Sheeran - The A Team.mp3";
+audio.src = "./songs/Ed Sheeran - The A Team.mp3";
 audio.setAttribute("id", "audio");
 musicContainer.appendChild(audio);
 
@@ -82,12 +82,12 @@ const playbackRateNames = [
 ];
 
 const playbackIcons = [
-  "../res/images/icons/opera.png",
-  "../res/images/icons/bath-solid.svg",
-  "../res/images/icons/vinyl-record.png",
-  "../res/images/icons/drumsticks.png",
-  "../res/images/icons/hand.png",
-  "../res/images/icons/rap.png",
+  "./res/images/icons/opera.png",
+  "./res/images/icons/bath-solid.svg",
+  "./res/images/icons/vinyl-record.png",
+  "./res/images/icons/drumsticks.png",
+  "./res/images/icons/hand.png",
+  "./res/images/icons/rap.png",
 ];
 
 let darkMode = true;
@@ -131,8 +131,8 @@ loadSong(songs[songIndex]);
 //update Song details
 function loadSong(song) {
   title.innerHTML = song;
-  audio.src = `../songs/${song}.mp3`;
-  cover.src = `../cover/${song}.png`;
+  audio.src = `./songs/${song}.mp3`;
+  cover.src = `./cover/${song}.png`;
 }
 
 function changeScheme(schemeIndex) {
@@ -317,7 +317,7 @@ function toggleEqualizer(eqBtn) {
 }
 
 function playListSound() {
-  const playListSound = new Audio("../res/sounds/click1.wav");
+  const playListSound = new Audio("./res/sounds/click1.wav");
   playListSound.play();
 }
 
