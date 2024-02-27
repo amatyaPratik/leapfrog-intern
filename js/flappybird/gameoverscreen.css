@@ -1,85 +1,118 @@
 #game .status {
-  font-size: 5.6vw;
+  font-size: 2rem;
   width: 20%;
   margin: 0 auto;
+  padding-top: 10vh;
   text-align: center;
   letter-spacing: -3px;
   color: white;
-  text-shadow: 2px 2px 7px black;
+  /* text-shadow: 0 0 7px white; */
+}
+
+@keyframes colorChange {
+  0% { color: red; }
+  25% { color: greenyellow; }
+  50% { color: yellow; }
+  75% { color: cyan; }
+  100% { color: crimson; }
+}
+
+.animated-text {
+  animation: colorChange 1s infinite; /* Adjust the duration as needed */
 }
 
 #game .summary {
   margin: 0 auto;
-  margin-top: 2.3rem;
-  width: 350px;
-  height: 180px;
+  margin-top: 10vh;
+  width: 45vw;
+  height: 30vh;
+  max-width: 320px;
   background-color: #dbd894;
   border-radius: 20px;
   position: relative;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 100;
   color: coral;
   letter-spacing: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  /* border: 1px solid violet; */
 }
 
 .summary .medal {
   width: 65%;
-  position: absolute;
-  left: 0;
   height: 100%;
+  padding-top: 8%;
   display: inline-block;
-  text-align: left;
-  padding: 0% 0 0% 12%;
+  text-align: center;
+  /* border: 1px solid red; */
+  /* padding: 0% 0 0% 12%; */
+}
+.summary .medal p{
+  margin: 0;
 }
 .medal .badge {
   width: 4.5rem;
   height: 4.5rem;
-  top: 38%;
-  position: absolute;
   border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 10%;
   background-color: #d3cd8c;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .summary .scores {
+  /* border: 1px solid yellow; */
   width: 35%;
   height: 100%;
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  text-align: right;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  flex-direction: column;
+  /* text-align: center; */
   padding-top: 7%;
-  padding-right: 7%;
+  /* padding-right: 7%; */
 }
 .summary .scores span {
-  height: 10px;
-  display: block;
+  /* height: 10px; */
+  /* display: block; */
+  /* border: 3px dotted darkorange; */
 }
 .scores .currentscore {
-  height: 40%;
+  /* display: block; */
   position: relative;
+  /* background-color: saddlebrown; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  /* border: 1px solid palegreen; */
+  height: 50%;
 }
 .currentscore .currentscorenumber {
   color: white;
-  font-size: 3.4rem;
   text-shadow: 0 0 3px black;
-  position: absolute;
-  right: 0;
-  margin-top: 5px;
+  font-size: 4vh;
+  margin-top: 10px;
+}
+.scores .currentscore span{
+  /* display: block; */
 }
 
 .scores .bestscore {
-  position: relative;
   height: 50%;
+  /* background-color: aqua; */
 }
 
 .scores .bestscore .bestscorenumber {
   color: white;
-  font-size: 3.4rem;
+  font-size: 4vh;
+  margin-top: 10px;
   text-shadow: 0 0 3px black;
-  margin-top: 5px;
-  right: 0;
 }
 
 #game .menu {

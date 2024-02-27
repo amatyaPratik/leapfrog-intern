@@ -13,6 +13,8 @@ const f = 158; // force of 1 flap
 const m = 0.85; // mass of bird in kg
 
 const bgm = new Audio("./res/sounds/bgm.ogg");
+bgm.loop = true;
+bgm.volume=0.5
 const sfx_coin = new Audio("./res/sounds/mariocoin.mp3");
 const sfx_gasp = new Audio("./res/sounds/metalclunk.wav");
 const sfx_fall = new Audio("./res/sounds/cartoonfall3.wav");
@@ -45,7 +47,7 @@ const pipes = document.createElement("div");
 pipes.classList.add("hurdle");
 pipes.innerHTML =
   '<div class="toppipe"></div><div class="gap"></div><div class="bottompipe"></div>';
-pipes.style.marginLeft = Math.floor(Math.random() * screen.width) + "px";
+pipes.style.marginLeft = (screen.width+ Math.floor(Math.random() * (screen.width/2))) + "px";
 document.getElementById("game").appendChild(pipes);
 
 const pipes2 = document.createElement("div");
@@ -278,30 +280,30 @@ function collision() {
   let pipe2bottom = bottompipes[1].getBoundingClientRect();
 
   if (
-    birdrect.top + birdrect.width / 3 < pipe1top.bottom &&
-    birdrect.right - birdrect.width / 3 > pipe1top.left &&
-    birdrect.left + birdrect.width / 3 < pipe1top.right
+    birdrect.top < pipe1top.bottom &&
+    birdrect.right > pipe1top.left &&
+    birdrect.left < pipe1top.left
   ) {
     sfx_gasp.play();
     gameover = true;
   } else if (
-    birdrect.top + birdrect.width / 3 < pipe2top.bottom &&
-    birdrect.right - birdrect.width / 3 > pipe2top.left &&
-    birdrect.left + birdrect.width / 3 < pipe2top.right
+    birdrect.top < pipe2top.bottom &&
+    birdrect.right > pipe2top.left &&
+    birdrect.left < pipe2top.right
   ) {
     sfx_gasp.play();
     gameover = true;
   } else if (
-    birdrect.bottom - birdrect.width / 3 > pipe1bottom.top &&
-    birdrect.right - birdrect.width / 3 > pipe1bottom.left &&
-    birdrect.left + birdrect.width / 3 < pipe1bottom.right
+    birdrect.bottom > pipe1bottom.top &&
+    birdrect.right > pipe1bottom.left &&
+    birdrect.left < pipe1bottom.left
   ) {
     sfx_gasp.play();
     gameover = true;
   } else if (
-    birdrect.bottom - birdrect.width / 3 > pipe2bottom.top &&
-    birdrect.right - birdrect.width / 3 > pipe2bottom.left &&
-    birdrect.left + birdrect.width / 3 < pipe2bottom.right
+    birdrect.bottom > pipe2bottom.top &&
+    birdrect.right > pipe2bottom.left &&
+    birdrect.left < pipe2bottom.left
   ) {
     sfx_gasp.play();
     gameover = true;
@@ -363,21 +365,52 @@ function award() {
 }
 
 function raiseLevel() {
-  if (score === 21 && score) {
+  if (score < 15 && score) {
     GAME_SPEED = 5;
     GAME_BONUS = 1;
-  } else if (score >= 30 && score < 60) {
+    bgm.pause();
+    bgm.playbackRate = 1;
+    bgm.play();
+    return
+  }
+  if (score < 40) {
     GAME_SPEED = 7;
     GAME_BONUS = 3;
-  } else if (score >= 60 && score < 90) {
+    bgm.pause();
+    bgm.playbackRate = 1.2;
+    bgm.play();
+    return
+  }
+  if (score < 90) {
     GAME_SPEED = 9;
     GAME_BONUS = 5;
-  } else if (score >= 90 && score < 200) {
+    bgm.pause();
+    bgm.playbackRate = 1.5;
+    bgm.play();
+    return
+  }
+  if (score < 100) {
     GAME_SPEED = 13;
     GAME_BONUS = 7;
-  } else if (score >= 200) {
+    bgm.pause();
+    bgm.playbackRate = 1.8;
+    bgm.play();
+    return
+  }
+  if (score < 200) {
     GAME_SPEED = 15;
     GAME_BONUS = 10;
+    bgm.pause();
+    bgm.playbackRate = 2;
+    bgm.play();
+    return
+  }
+  else{
+    GAME_SPEED = 20;
+    GAME_BONUS = 20;
+    bgm.pause();
+    bgm.playbackRate = 2.5;
+    bgm.play();
   }
 }
 
@@ -387,15 +420,32 @@ window.addEventListener("mousedown", () => {
   flapstart = new Date().getMilliseconds;
   flap();
 });
+window.addEventListener("keydown", (e) => {
+  if (e.code === "Space") {
+    flapstart = new Date().getMilliseconds;
+    flap();
+  }
+});
 
 window.addEventListener("mouseup", () => {
   flapend = new Date().getMilliseconds;
 });
 
-window.addEventListener("keydown", (e) => {
+window.addEventListener("keyup", (e) => {
   if (e.code === "Space") {
-    pauseplay();
+    flapend = new Date().getMilliseconds;
   }
+});
+
+
+window.addEventListener("keydown", (e) => {
+  if (e.code === "Escape") {
+    pauseplay();
+    return;
+  }
+  if(e.code === "Enter")
+    if(gamepause)
+      pauseplay();
 });
 
 //play button
