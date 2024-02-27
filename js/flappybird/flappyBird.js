@@ -455,7 +455,7 @@ document.getElementsByClassName("playbtn")[0].addEventListener("click", () => {
 
 //exit button
 document.getElementsByClassName("exitbtn")[0].addEventListener("click", () => {
-  window.location.replace("https://daemonofhell.github.io/leapfrog-intern/#");
+  window.location.replace("https://amatyaPratik.github.io/leapfrog-intern/#");
 });
 
 /**
